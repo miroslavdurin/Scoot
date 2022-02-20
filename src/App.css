@@ -1,4 +1,5 @@
 .heading--h1 {
+  color: #fff;
   font-size: 5.6rem;
   line-height: 5.6rem;
   letter-spacing: -2.5px;
@@ -22,16 +23,83 @@
   letter-spacing: -1.07px;
 }
 
-.heading--h1,
 .heading--h2,
 .heading--h3,
-.heading--h4,
-.paragraph {
+.heading--h4 {
   color: var(--color-dark-navy);
 }
 
 .paragraph {
+  font-weight: normal;
   font-family: var(--font-sub);
   font-size: 1.5rem;
   line-height: 2.5rem;
+  color: var(--color-dim-grey);
+}
+
+.button {
+  width: 18rem;
+  height: 5.3rem;
+  font-size: 1.5rem;
+  font-family: var(--font-main);
+  line-height: 2.5rem;
+  border: 3px solid var(--color-yellow);
+  color: #fff;
+  background-color: var(--color-yellow);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+a.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+  outline: none;
+  background-color: #fff;
+  color: var(--color-yellow);
+}
+
+.container {
+  max-width: 111rem;
+  margin: 0 auto;
+}
+
+.mb-24 {
+  margin-bottom: 2.4rem;
+}
+
+.mb-40 {
+  margin-bottom: 4rem;
+}
+
+.mb-64 {
+  margin-bottom: 6.4rem;
+}
+
+.mb-100 {
+  margin-bottom: 10rem;
+}
+
+.mb-120 {
+  margin-bottom: 12rem;
+}
+
+.mb-160 {
+  margin-bottom: 16rem;
+}
+
+.mb-200 {
+  margin-bottom: 20rem;
+}
+
+@media only screen and (max-width: 1250px) {
+  .container {
+    margin: 0 10rem;
+  }
 }

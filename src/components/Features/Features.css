@@ -1,0 +1,26 @@
+.section-features {
+    position: relative;
+}
+
+.section-features::before {
+    content: "";
+    display: block;
+    height: 1.5rem;
+    width: 65%;
+    background-color: var(--color-light-grey);
+    position: absolute;
+    z-index: -1;
+    top: 4.8rem;
+    transform: translateY(-50%);
+}
+.features {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+.features__card {
+
+}
+.features__icon {
+
+}

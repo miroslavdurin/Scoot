@@ -16,10 +16,10 @@ import ourIntegrity from '../assets/images/our-integrity.jpg';
 import ourTech from '../assets/images/our-tech.jpg';
 import payments from '../assets/images/payments.jpg';
 import telemetry from '../assets/images/telemetry.jpg';
-import worldMapDesktop from '../assets/images/world-map-desktop.jpg';
-import worldMapMobile from '../assets/images/world-map-mobile.jpg';
-import worldMapTablet from '../assets/images/world-map-tablet.jpg';
-
+import worldMapDesktop from '../assets/images/world-map-desktop.png';
+import worldMapMobile from '../assets/images/world-map-mobile.png';
+import worldMapTablet from '../assets/images/world-map-tablet.png';
+ 
 
 export default {
     aboutHeroDesktop,

@@ -1,0 +1,53 @@
+.section-map {}
+
+.map {
+    position: relative;
+}
+
+.map__image {
+    width: 100%;
+    display: block;
+}
+
+.map__location {
+    position: absolute;
+    width: 19rem;
+    height: 7.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-yellow);
+}
+
+.map__location::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2.4rem;
+    left: 50%;
+    width: 3.2rem;
+    height: 1.6rem;
+    background-color: var(--color-yellow);
+    transform: translate(-50%, -50%);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+.map__location--new-york {
+    top: 13%;
+    left: 13%;
+}
+
+.map__location--london {
+    top: 18px;
+    left: 392px;
+}
+
+.map__location--yokohama {
+    top: 78px;
+    right: 66px;
+}
+
+.map__location--jakarta {
+    top: 251px;
+    right: 143px;
+}

@@ -1,0 +1,45 @@
+.section-values{}
+
+.values {
+    text-align: center;
+}
+
+.values__cards {
+    display: flex;    
+    align-items: space-between;
+}
+
+.values__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.values__figure {
+    margin-bottom: -1.6rem;
+}
+
+.values__image-container {
+    clip-path: circle(50% at 50%);
+    overflow: hidden;
+    width: 24rem;
+    height: 24rem;
+}
+
+.values__figcaption {
+    font-size: 2.4rem;
+    font-weight: bold;
+    background-color: var(--color-yellow);
+    width: 9.6rem;
+    height: 9.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(50% at 50%);
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+.values__card .paragraph {
+    padding: 0 1.6rem;
+}

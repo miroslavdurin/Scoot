@@ -1,0 +1,47 @@
+.section-cta{
+    background-color: var(--color-dark-navy); 
+    position: relative;
+    overflow: hidden;
+}
+
+.cta {
+    display: flex;
+    padding: 10rem 0;
+}
+
+.cta--left {
+    flex: 1;
+    padding-right: 20rem;
+}
+
+.cta--right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.cta__link {
+    cursor: pointer;
+    z-index: 10;
+}
+
+.cta__link:first-child {
+    margin-right: 1.8rem;
+}
+
+.cta__icon {
+    display: block;
+}
+
+.color-white {
+    color: white;
+}
+
+.cta__background-image {
+    position: absolute;
+    opacity: 0.1;
+    right: 0;
+    bottom: 0;
+    transform: scale(5) translate(-25%, 10%);
+}

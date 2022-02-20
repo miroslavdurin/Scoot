@@ -1,0 +1,20 @@
+.hero-banner {
+    --background-desktop: url('');
+    --background-tablet: url('');
+    --background-mobile: url('');
+    background-image: var(--background-desktop);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hero-banner__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6.8rem 0;
+}
+
+.hero-banner__circles {
+    transform: translateX(20rem);
+}

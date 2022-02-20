@@ -165,14 +165,11 @@ const careers = {
     info: {
             title: "Care to join our mission?",
             text: "We’re always looking for ambitious individuals to help us on our journey. If you’re passionate about our mission to provide clean, accessible transport to improve urban living we want to hear from you!",
-            btn: "Learn More",
+            btn: "Say Hello",
             image: images.joinUs
         },
-    join: {
-        title: "Why join us?",
-    },
     values: {
-        title: "Our values",
+        title: "Why join us?",
         content: [
             {
                 number: "01",

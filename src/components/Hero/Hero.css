@@ -1,0 +1,53 @@
+.section-hero {
+    background-image: var(--background-hero-desktop);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero {
+    padding: 15.3rem 0;
+    position: relative;
+}
+
+.hero__content {
+}
+
+.hero__text-box {    
+    max-width: 45%;
+}
+
+.heading--h1 span {
+    display: block;
+}
+
+.hero__description {
+    color: #fff;
+    margin-left: 9.5rem;
+}
+
+.hero__btn {
+    margin-left: 9.5rem;
+}
+
+svg.hero__line {
+    position: absolute;
+    top: 35.5rem;   
+    stroke: 20px;
+    left: 0;
+    width: var(--line-width);
+    background-color: var(--color-yellow);
+}
+
+
+.hero__right-arrow {
+    position: absolute;
+    top: 35.5rem;
+    left: var(--hero-arrow-x-offset);
+}
+
+.hero__circles {
+    position: absolute;
+    right: 0;
+    transform: translateX(5rem);
+}
