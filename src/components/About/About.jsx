@@ -31,8 +31,8 @@ function About() {
                 />            
             </header>
             <main>                
-                <Info info={info[0]} mb="mb-120" hasBtn={false} isReversed = {false} isArrowUp={false} mbBig={false} />
-                <Info info={info[1]} mb="mb-120" hasBtn={false} isReversed = {true} isArrowUp={false} mbBig={false} />
+                <Info info={info[0]} mb="mb-120" hasBtn={false} isReversed = {false} arrow={"isArrowBottomUp"} mbBig={false} />
+                <Info info={info[1]} mb="mb-120" hasBtn={false} isReversed = {true} mbBig={false} />
                 <Values values={values} />
                 <FAQs />
                 <Cta />

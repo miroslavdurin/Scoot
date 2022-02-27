@@ -30,7 +30,7 @@ function Careers() {
                 />            
             </header>
             <main>
-                <Info info={info} mb="mb-160" hasBtn={true} isReversed={false} isArrowUp={false}/>
+                <Info info={info} mb="mb-160" hasBtn={true} isReversed={false} arrow={"isArrowBottomDown"}/>
                 <Values values={values} />
                 <Jobs jobs={jobs}/>
                 <Cta />

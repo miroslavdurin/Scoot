@@ -71,3 +71,58 @@
 .footer__item--icon:hover svg {
     fill: #fff;
 }
+
+@media only screen and (max-width: 650px) {
+    .footer {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 6.4rem 10rem 8.8rem 10rem;
+    }
+    .footer__container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer--left-side {
+        flex-direction: column;
+    }
+    
+    .footer--left-side .footer__links {
+        flex-direction: column;
+        margin-bottom: 8.5rem;
+    }
+    
+    .footer--left-side .footer__item:not(:last-child) {
+        display: block;
+        margin-bottom: 1.6rem;
+    }
+
+    .footer__logo-box {
+        margin-right: 0;
+        margin-bottom: 4.2rem;
+    }
+    
+    .footer__item {
+        margin-right: 0;   
+    }
+
+    .footer__item--icon {
+        margin-right: 2.4rem;
+    }
+    
+    .footer__item--icon:last-child {
+        margin-right: 0;
+    }
+    
+    .footer__link {
+        font-size: 1.5rem;
+        color: var(--color-dim-grey);
+        line-height: 2.5rem;
+    }
+    
+    
+}

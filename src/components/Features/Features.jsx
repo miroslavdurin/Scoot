@@ -12,9 +12,12 @@ function Features() {
                 {features.map((feature,i)=>{
                     return(
                         <div key={altTags[i]} className="features__card">                            
-                            <img className="features__icon mb-40" src={feature.icon} alt={altTags[i]} />                                                          
-                            <h4 className="heading--h4 mb-24">{feature.title}</h4>
-                            <p className="paragraph">{feature.text}</p>
+                            <img className="features__icon mb-40" src={feature.icon} alt={altTags[i]} />     
+                            <div className="features__content">
+                                <h4 className="heading--h4 mb-24">{feature.title}</h4>
+                                <p className="paragraph">{feature.text}</p>
+                            </div>                                                     
+                            
                         </div>
                     )
                 })}

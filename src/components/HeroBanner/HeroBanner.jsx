@@ -8,9 +8,9 @@ function HeroBanner(props) {
 
     useEffect(()=>{
         const banner = document.querySelector('.hero-banner')
-        banner.style.setProperty('--background-desktop', `url('${backgroundDesk}')`);
-        banner.style.setProperty('--background-tablet', `url('${backgroundTab}')`);
-        banner.style.setProperty('--background-mobile', `url('${backgroundMob}')`);
+        banner.style.setProperty('--background-desktop', `url("${backgroundDesk}")`);
+        banner.style.setProperty('--background-tablet', `url("${backgroundTab}")`);
+        banner.style.setProperty('--background-mobile', `url("${backgroundMob}")`);
     },[])
 
     return (

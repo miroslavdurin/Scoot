@@ -4,13 +4,16 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
 }
 .nav--left-side {
     display: flex;
     flex-direction: row;
-
+    align-items: center;
 }
+
 .nav--right-side {}
+
 .nav__logo-box {
     margin-right: 5.8rem;
 }
@@ -35,4 +38,145 @@
 .nav__item:hover .nav__link{
     color: var(--color-yellow);
 }
-.nav__button {}
+.nav__mobile-button {
+    display: block;
+    width: 20px;
+    height: 16px;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    display: none;
+    margin-left: 3.2rem;
+    margin-right: -52px;
+}
+
+.nav__mobile-hamburger {
+    width: 20px;
+    height: 4px;
+    background-color: var(--color-yellow);
+    position: relative;
+    display: block;
+}
+
+.nav__mobile-hamburger::before,
+.nav__mobile-hamburger::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 4px;
+    background-color: var(--color-yellow);
+}
+
+.nav__mobile-hamburger::before {
+    top: -7px;
+}
+
+.nav__mobile-hamburger::after {
+    bottom: -6.5px;
+}
+
+.nav__mobile-menu {
+    position: fixed;
+    z-index: 1;
+    top: 9.6rem;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav__mobile-overlay {
+    position: fixed;
+    top: 9.6rem;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0, 0.7);
+    width: 100vw;
+    height: 100%;
+}
+
+.nav__mobile-links {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 20;
+    width: 68%;
+    height: calc(100vh - 9.6rem);
+    background-color: var(--color-dark);
+    padding: 6.4rem 3.2rem 2.4rem;
+}
+
+.nav__mobile-item {
+    margin-bottom: 2.4rem;    
+}
+
+.nav__mobile-item:last-child {   
+    margin-bottom: 0;
+    margin-top: auto;
+    margin-right: 3.2rem;
+}
+
+.nav__mobile-link {
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+}
+
+.nav__mobile-btn {
+    width: 19.2rem;
+    height: 5.3rem;
+}
+
+@media only screen and (max-width: 768px){
+    .nav.container {
+        margin: 0 4rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .nav {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: #fff;
+    }
+
+    nav.nav.container {
+        margin: 0;
+    }
+    
+
+    .nav__links,
+    .nav--right-side {
+        display: none;
+    }
+
+    .nav--left-side {
+        width: 100%;
+    }
+
+    .nav__mobile-button {
+        display: block;
+    }
+
+    .nav__logo-box {        
+        margin-left: auto;
+        margin-right: auto;        
+    }
+}
+
+@media only screen and ( max-width: 370px) {
+    .nav__mobile-links {        
+        width: 85%;
+    }
+    
+}

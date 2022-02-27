@@ -13,6 +13,9 @@
   --color-snow: #F2F5F9;
 
   --background-hero-desktop: url("./assets/images/home-hero-desktop.jpg");
+  --background-hero-tablet: url("./assets/images/home-hero-tablet.jpg");
+  --background-hero-mobile: url("./assets/images/home-hero-mobile.jpg");
+
 
   --line-width: 200px;
   --hero-arrow-x-offset: 0px;
@@ -51,6 +54,20 @@ a {
   text-decoration: none;
   color: unset;
 }
+
+
+@media only screen and (max-width: 950px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px){
+    html {
+      font-size: 62.5%;
+    }
+}
+
 
 /* body {
   margin: 0;

@@ -20,9 +20,9 @@ function Home() {
             </header>
             <main>
                 <Features />
-                <Info info={info[0]} mb="mb-160" hasBtn={true} isReversed={false} isArrowUp={false} />
-                <Info info={info[1]} mb="mb-160" hasBtn={true} isReversed={true} isArrowUp={false} />
-                <Info info={info[2]} mb="mb-200" hasBtn={true} isReversed={false} isArrowUp={true} />
+                <Info info={info[0]} mb="mb-160" hasBtn={true} isReversed={false}  arrow={'isArrowBottomDown'}/>
+                <Info info={info[1]} mb="mb-160" hasBtn={true} isReversed={true}  />
+                <Info info={info[2]} mb="mb-200" hasBtn={true} isReversed={false} arrow={'isArrowUp'}/>
                 <Cta />
             </main>            
             <Footer />

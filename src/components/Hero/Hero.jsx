@@ -28,8 +28,7 @@ function Hero() {
                 <div className="hero__content container">
                     <div className="hero__text-box mb-40">
                         <h1 className="heading--h1 mb-40">
-                            <span>{home.heroDesktop.spanOne}</span>
-                            <span>{home.heroDesktop.spanTwo}</span>
+                            {home.heroDesktop.spanOne} {home.heroDesktop.spanTwo}
                         </h1>
                         <p className="hero__description paragraph">
                             {home.heroDesktop.text}

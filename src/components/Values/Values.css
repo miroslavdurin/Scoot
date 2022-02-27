@@ -6,7 +6,8 @@
 
 .values__cards {
     display: flex;    
-    align-items: space-between;
+    justify-content: space-between;
+    gap: 3rem;
 }
 
 .values__card {
@@ -41,5 +42,29 @@
 }
 
 .values__card .paragraph {
-    padding: 0 1.6rem;
+    padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {   
+        
+    .values__cards {
+        flex-direction: column;
+        gap: 5.5rem;
+    }
+
+        
+    .values__card .paragraph {
+        padding: 0;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .values h2 {
+        margin-bottom: 6.4rem;
+    }
+
+    .values__figure {
+        margin-bottom: -3.2rem;
+    }
 }

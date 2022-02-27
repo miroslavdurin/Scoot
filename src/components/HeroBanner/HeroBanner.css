@@ -18,3 +18,56 @@
 .hero-banner__circles {
     transform: translateX(20rem);
 }
+
+
+@media only screen and (max-width: 1440px) {
+    .hero-banner__circles {
+        transform: translateX(0);
+        margin-right: -13rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-banner__content.container {
+        margin-left: 10rem;
+    }
+
+    .hero-banner {
+        background-image: var(--background-tablet);
+        margin-bottom: 14.4rem;
+    }
+
+    .hero-banner__circles {        
+        margin-right: -7rem;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .hero-banner {
+        margin-top: 9.6rem;
+        text-align: center;
+    }
+
+    .hero-banner__content {
+        justify-content: center;
+    }
+
+    .hero-banner__circles {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .hero-banner {
+        background-image: var(--background-mobile);
+        margin-bottom: 7.2rem;
+    }
+
+    .hero-banner__content {
+        padding: 6rem 0;
+    }
+
+    .hero-banner__content.container {
+        margin-left: 3.2rem;
+    }
+}

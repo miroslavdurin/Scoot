@@ -12,7 +12,9 @@ function Footer() {
             <div className="footer__container container">    
                 <div className="footer--left-side">
                     <div className="footer__logo-box">
-                        <FooterLogo className="footer__logo" />
+                        <a href="#">
+                            <FooterLogo className="footer__logo" />
+                        </a>
                     </div>
                     <ul className="footer__links">
                         <li className="footer__item">

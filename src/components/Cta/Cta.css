@@ -7,6 +7,7 @@
 .cta {
     display: flex;
     padding: 10rem 0;
+    align-items: center;
 }
 
 .cta--left {
@@ -44,4 +45,83 @@
     right: 0;
     bottom: 0;
     transform: scale(5) translate(-25%, 10%);
+}
+
+@media only screen and (max-width: 1020px) {
+    .cta--left {
+        flex: 2;
+    }
+
+    
+    .cta--right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3rem;
+    }
+
+        
+    .cta__link:first-child {
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 768px)  {
+    .cta {
+        flex-direction: column;
+        padding: 6.2rem 11.5rem;
+    }
+
+    
+
+    .cta__link:first-child {
+        margin-right: 1.8rem;
+    }
+        
+    .cta--left {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 4rem;
+    }
+
+    .cta--right {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0;
+    }
+}
+
+
+
+@media only screen and (max-width: 450px) {
+    .cta {
+        padding: 8.8rem 0;
+    }
+
+    .cta--right {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    
+    .cta__link:first-child {
+        margin-right: 0;        
+    }
+
+    .cta__link {
+        margin-right: 0;   
+    }
+
+    .cta__link:first-child {
+        width: 113px;
+        margin-right: 13px;
+    }
+
+    .cta__link:last-child {
+        width: 130px;
+    }
+    
+    .cta__icon {
+        width: 100%;
+        margin-right: 0;
+    }
 }

@@ -2,6 +2,9 @@
 
 .map {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .map__image {
@@ -23,7 +26,7 @@
     content: '';
     display: block;
     position: absolute;
-    bottom: -2.4rem;
+    bottom: -2.3rem;
     left: 50%;
     width: 3.2rem;
     height: 1.6rem;
@@ -39,7 +42,7 @@
 
 .map__location--london {
     top: 18px;
-    left: 392px;
+    left: 405px;
 }
 
 .map__location--yokohama {
@@ -50,4 +53,139 @@
 .map__location--jakarta {
     top: 251px;
     right: 143px;
+}
+
+@media only screen and (max-width: 1255px) {
+    .map {
+        width: 95rem;
+        margin: auto;
+    }
+
+    .map__location--new-york {       
+        top: 10.5%; 
+        left: 11.5%;
+    }
+    
+    .map__location--london {
+        top: 0.7%;
+        left: 35%;
+    }
+    
+    .map__location--yokohama {
+        top: 11.7%;
+        right: 4.32%;
+    }
+    
+    .map__location--jakarta {
+        top: 43.5%;
+        right: 11.47%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-map {
+        margin-bottom: 6.4rem;
+    }
+
+    .map {
+        width: 70rem;
+        margin: auto;
+    }
+
+    .map__location {
+        width: 12rem;
+        height: 3.2rem;
+    }
+
+    .map__location h4 {
+        font-size: 1.3rem;
+        line-height: 2.8rem;
+    }
+    
+    .map__location::after {
+        bottom: -1.1rem;
+        width: 1.6rem;
+        height: 0.8rem;
+    }
+
+    .map__location--new-york {       
+        top: 18%; 
+        left: 13%;
+    }
+    
+    .map__location--london {
+        top: 8%;
+        left: 36.3%;
+    }
+    
+    .map__location--yokohama {
+        top: 50.5%;
+        right: 13%;
+    }
+    
+    .map__location--jakarta {
+        top: 19%;
+        right: 6%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .map {
+        width: 90%;
+    }
+
+    .map__image {
+        margin-bottom: 4rem;
+    }
+
+    .map__location {
+        position: initial;
+        width: 70%;
+        height: 7.2rem;        
+        background-color: var(--color-light-yellow);
+    }
+
+    .map__location:not(:last-child) {
+        margin-bottom: 1.6rem;
+    }
+
+    .map__location h4 {
+        font-size: 2.4rem;
+    }
+    
+    .map__location::after {
+        display: none;
+    }
+
+    .map__location--new-york {       
+        position: initial;
+    }
+    
+    .map__location--london {
+        position: initial;
+    }
+    
+    .map__location--yokohama {
+        position: initial;
+    }
+    
+    .map__location--jakarta {
+        position: initial;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .section-map {
+        margin-bottom: 7.2rem;
+    }
+
+    .map {
+        width: 83%;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .map__location {
+        width: 100%;
+    }
 }

@@ -9,10 +9,18 @@ import {ReactComponent as LeftUpwardArrow} from '../../assets/patterns/left-upwa
 
 function Info(props) {
     const {info} = props;
-    const {isReversed, isArrowUp, mb, hasBtn} = props;
+    const {isReversed, arrow /* isArrowBottomDown, isArrowBottomUp, isArrowTop */, mb, hasBtn} = props;
     let imgContainerPos;
     let infoCirclesRight;
     let infoCirclesLeft;
+
+    console.log(arrow)
+
+    const arrowChoice = arrow =>{
+        if(arrow === 'isArrowBottomDown') return "info__arrow--left-bottom-down"
+        else if(arrow === 'isArrowBottomUp') return "info__arrow--left-bottom-up"
+        else return "info__arrow--left-top"
+    }
  
     useEffect(()=> {
         imgContainerPos = document.querySelector('.container').getBoundingClientRect();
@@ -23,7 +31,6 @@ function Info(props) {
         infoCirclesRight.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.right + 65}px`));
         infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));
 
-        document.querySelector("#line").style.pathLength = '200'
     }, []);
 
     window.addEventListener('resize', ()=> {         
@@ -32,9 +39,7 @@ function Info(props) {
         infoCirclesLeft = document.querySelectorAll('.info__circle--reverse');
 
         infoCirclesRight.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.right + 65}px`));
-        infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));
-
-        
+        infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));       
     }) 
 
 
@@ -45,7 +50,7 @@ function Info(props) {
                     <h2 className="heading--h2 mb-24">
                         {info.title}
                     </h2>
-                    <p className="paragraph mb-40">
+                    <p className={`paragraph ${hasBtn && 'mb-40'}`}>
                         {info.text}
                     </p>
                     {
@@ -58,18 +63,14 @@ function Info(props) {
                 </div>
                 <div className="info--right">
                     <div className="info__img-container">
-                        <img src={info.image} alt="" className="info__img" />
+                        <img src={info.image} alt="info image" className="info__img" />
                     </div>
+                    
+                    <img src={patterns.circle} alt="circle patterns" className={`info__circle`} />
                 </div>
             </div>
-            <img src={patterns.circle} alt="" className={`info__circle ${isReversed && 'info__circle--reverse'}`} />
-            {isReversed && <RightArrow className="info__arrow--right"/>}            
-            {!isReversed && (
-                isArrowUp ? 
-                    <LeftDownwardArrow className="info__arrow--left-top" />
-                    :
-                    <LeftDownwardArrow className="info__arrow--left-bottom" />
-            )}
+            {isReversed && <LeftDownwardArrow className="info__arrow--right"/>}            
+            {!isReversed && <LeftDownwardArrow className={arrowChoice(arrow)} />}
         </section>
     )
 }

@@ -22,7 +22,7 @@ function Cta() {
                     </a>                    
                 </div>
             </div>
-            <img className="cta__background-image" src={patterns.whiteCircles} alt="" />
+            <img className="cta__background-image" src={patterns.whiteCircles} alt="Circles background" />
         </section>
     )
 }

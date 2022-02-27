@@ -103,3 +103,41 @@ a.button {
     margin: 0 10rem;
   }
 }
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 0 4rem;
+  }
+}
+
+
+@media only screen and (max-width: 450px) {
+  .container {
+    margin: 0 3.2rem;
+  }
+
+  .heading--h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: -1.79px;
+  }
+  
+  .heading--h2 {
+    font-size: 3.2rem;
+    line-height: 3.2rem;
+    letter-spacing: -1.43px;
+  }
+  
+  .heading--h3 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    letter-spacing: -1.07px;
+  }
+  
+  .heading--h4 {
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    letter-spacing: -1.07px;
+  }
+}

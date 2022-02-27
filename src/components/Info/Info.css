@@ -2,9 +2,11 @@
     position: relative;
     overflow: hidden;
 }
+
 .info {
     display: flex;
-    gap: 10%;
+    justify-content: space-between;
+    gap: 15vw;
 }
 
 
@@ -13,7 +15,7 @@
 }
 
 .info--left {
-    flex: 1;
+    min-width: 40%;
 
     display: flex;
     flex-direction: column;
@@ -22,12 +24,30 @@
 
 .info--right {
     flex: 1;
+    display: flex;
+    align-items: center;
 }
+
+.info--reverse .info--right {
+    flex-direction: row-reverse;
+}
+
+.info--reverse .info__img-container {
+    margin-right: 0;
+}
+
 
 .info__img-container {
     overflow: hidden;
     clip-path: circle(50% at 50%);
-    width: 100%;
+    width: 44.5rem;
+    height: 44.5rem;
+    margin-right: 6.4rem;
+}
+
+
+.info--reverse .info__circle {
+    margin-right: 6.4rem;
 }
 
 .info__img {
@@ -35,24 +55,17 @@
     width: 100%;
 }
 
-.info__circle {
-    --left-position: 0;
-    position: absolute;
-    top: 0;
-    left: var(--left-position);
-}
-
-.info__circle--reverse {
-    --left-position: 0;
-    position: absolute;
-    top: 0;
-    left: var(--left-position);
-}
-
-.info__arrow--left-bottom {
+.info__arrow--left-bottom-down {
     position: absolute;
     bottom: 0;
     left: 50vw;
+}
+
+.info__arrow--left-bottom-up {
+    position: absolute;
+    bottom: 3.8rem;
+    left: 50vw;
+    transform: rotateX(180deg);
 }
 
 .info__arrow--left-top {
@@ -61,13 +74,182 @@
     left: 74vw;
 }
 
-.info__arrow--left-top#line {
-    stroke-dasharray: 200px;
-    stroke-dashoffset: 200px;
-}
-
 .info__arrow--right {
     position: absolute;
+    transform: rotateY(180deg);
     top: 0;
-    left: 0;
+    right: 74vw;
+}
+
+ 
+@media only screen and (max-width: 1250px) {
+    .info__img-container {
+        width: 40rem;
+        height: 40rem;
+    }    
+
+    .info__circle {
+        width: 40rem;
+        height: 40rem;
+    }
+
+    .info{
+        gap: 12vw;
+    }
+} 
+
+@media only screen and (max-width: 768px) {
+    .section-info {
+        margin-bottom: 12rem;
+    }
+
+    .info {
+        flex-direction: column-reverse;
+        gap: 6.4rem
+    }
+
+    .info--left {
+        text-align: center;
+        width: 85%;
+        margin: auto;
+    }
+
+    .info--left h2 {
+        margin-bottom: 4rem;
+    }
+
+    .info--left .button {
+        margin: auto;
+    }
+
+    .info--right {
+        position: relative;
+    }
+
+    .info__img-container {
+        margin: 0 auto;
+        width: 58vw;
+        height: 58vw;
+    }
+
+    .info__img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info__circle {
+        position: absolute;
+        right: -59.5%;
+        width: 58vw;
+        height: 58vw;
+    }
+
+    .info--reverse .info--right {
+        flex-direction: row-reverse;
+        gap: 0;
+    }
+    
+    .info--reverse .info__img-container {
+        margin: 0 auto;
+
+    }
+    .info--reverse .info__circle {
+        left: -59.5%;
+        margin-right: 0;
+    }
+
+    .info__arrow--left-bottom-down {
+        top: 42vw;
+        bottom: initial;
+        left: 4rem;
+    }
+    
+    .info__arrow--left-bottom-up {
+        top: 35vw;        
+        bottom: initial;
+        left: 4rem;
+    }
+    
+    .info__arrow--left-top {        
+        top: 10%;
+        left: 51vw;
+    }
+    
+    .info__arrow--right {
+        right: 55vw;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .info__arrow--left-bottom-down {
+        top: 27vw;        
+    }
+    
+    .info__arrow--left-bottom-up {
+        top: 27vw;  
+    }    
+}
+
+@media only screen and (max-width: 450px) {  
+    .info {
+        gap: 5.6rem
+    }
+
+    .info__circle {
+        display: none;
+    }
+
+    .info__img-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info--left {
+        width: 100%;
+    }
+    
+    .info--left h2 {
+        margin-bottom: 3.2rem;
+    }
+
+    .info--left p {
+        margin-bottom: 3.2rem;
+    }
+    
+    .info__arrow--left-bottom-down {        
+        top: 17rem;
+        left: 2.7rem;
+    }
+    
+    .info__arrow--left-bottom-up {
+        top: 35vw;        
+        left: 2.7rem;
+    }
+    
+    .info__arrow--left-top {        
+        top: 0;
+        left: 13rem;
+    }
+    
+    .info__arrow--right {       
+        top: 0;
+        right: 2.7rem;
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .info__arrow--left-bottom-down {        
+        top: 14rem;
+    }
+}
+
+
+@media only screen and (max-width: 330px) {
+    .info__arrow--left-bottom-down {
+        top: 20vw;        
+    }
+    
+    .info__arrow--left-bottom-up {
+        top: 20vw;  
+    }    
 }

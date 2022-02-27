@@ -14,7 +14,7 @@ function Values(props) {
                     <div className="values__card">
                         <figure className="values__figure">
                             <div className="values__image-container">
-                                <img src={content[0].image} alt="" />
+                                <img src={content[0].image} alt={content[0].title} />
                             </div>
                             <figcaption className="values__figcaption" >
                                 {content[0].number}
@@ -30,7 +30,7 @@ function Values(props) {
                     <div className="values__card">
                         <figure className="values__figure">
                             <div className="values__image-container">
-                                <img src={content[1].image} alt="" />
+                                <img src={content[1].image} alt={content[1].title} />
                             </div>
                             <figcaption className="values__figcaption" >
                                 {content[1].number}
@@ -46,7 +46,7 @@ function Values(props) {
                     <div className="values__card">
                         <figure className="values__figure">
                             <div className="values__image-container">
-                                <img src={content[2].image} alt="" />
+                                <img src={content[2].image} alt={content[2].title} />
                             </div>
                             <figcaption className="values__figcaption" >
                                 {content[2].number}
