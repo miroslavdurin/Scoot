@@ -7,6 +7,7 @@ import Values from '../Values/Values';
 import Jobs from '../Jobs/Jobs';
 import Cta from '../Cta/Cta';
 import Footer from '../Footer/Footer';
+import {motion} from 'framer-motion';
 
 import { data } from '../../constants/index';
 
@@ -19,7 +20,16 @@ function Careers() {
 
     console.log(data.careers)
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0,
+            transition: {               
+                type: 'keyframes',               
+                delay: 0.7
+            }}}
+            transition={{ duration: 0.5}}
+        >
             <header>
                 <Navbar />
                 <HeroBanner 
@@ -36,7 +46,7 @@ function Careers() {
                 <Cta />
                 <Footer />
             </main>
-        </>
+        </motion.div>
     )
 }
 

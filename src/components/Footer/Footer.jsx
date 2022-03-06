@@ -5,11 +5,21 @@ import {ReactComponent as FacebookIcon} from '../../assets/icons/facebook.svg';
 import {ReactComponent as InstagramIcon} from '../../assets/icons/instagram.svg';
 import {ReactComponent as TwitterIcon} from '../../assets/icons/twitter.svg';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Footer() {
     return (
         <footer className='footer'>    
-            <div className="footer__container container">    
+            <motion.div className="footer__container container"
+                initial={{                    
+                    opacity: 0,
+                }}
+                whileInView= {{                   
+                    opacity: 1
+                }}
+                transition={{duration: 0.7}}
+                viewport={{once: true, amount: "all"}}
+            >    
                 <div className="footer--left-side">
                     <div className="footer__logo-box">
                         <a href="#">
@@ -47,7 +57,7 @@ function Footer() {
                         </li>
                     </ul>
                 </div>     
-            </div>           
+            </motion.div>           
         </footer>
     )
 }

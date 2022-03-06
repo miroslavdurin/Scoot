@@ -3,19 +3,25 @@ import { useState } from 'react';
 import './Navbar.css';
 import { logo } from '../../constants';
 import { NavLink } from 'react-router-dom';
-import { icons } from '../../constants';
+import { motion } from 'framer-motion';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     function handleOpen() {
         setIsOpen(!isOpen);
-
-        console.log(isOpen)
     }
 
     return (
-        <nav className='nav container'>        
+        <motion.nav className='nav container'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0,
+            transition: {
+                duration: 0.2, delay:0
+            } }}
+            transition={{ duration: 0.6, delay: 0.2}}
+        >        
             <div className="nav--left-side">     
                 <button aria-label="mobile navigation" className="nav__mobile-button" onClick={handleOpen}>
                     <div className="nav__mobile-hamburger" />
@@ -65,7 +71,7 @@ function Navbar() {
             </div>     
 
 
-        </nav>
+        </motion.nav>
     )
 }
 

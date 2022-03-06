@@ -44,11 +44,11 @@
 
 @media only screen and (max-width: 720px) {
     .hero-banner {
-        margin-top: 9.6rem;
         text-align: center;
     }
 
     .hero-banner__content {
+        padding-top: 16.4rem;
         justify-content: center;
     }
 

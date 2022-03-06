@@ -1,6 +1,7 @@
 import React from 'react'
 import './Cta.css';
 import { icons, patterns } from '../../constants/index';
+import { motion } from 'framer-motion';
 
 function Cta() {
     const {googlePlay, appStore} = icons;
@@ -8,19 +9,41 @@ function Cta() {
     return (
         <section className="section-cta">
             <div className="cta container">
-                <div className="cta--left">
+                <motion.div className="cta--left"
+                    initial={{
+                        x: -70,
+                        opacity: 0
+                    }}
+                    whileInView= {{
+                        x: 0,
+                        opacity: 1
+                    }}
+                    transition={{duration: 0.7}}
+                    viewport={{once: true, amount: 0.6}}
+                >
                     <h2 className="heading--h2 color-white">
                         Sign up and Scoot off today
                     </h2>
-                </div>
-                <div className="cta--right">
+                </motion.div>
+                <motion.div className="cta--right"
+                    initial={{
+                        x: 70,
+                        opacity: 0
+                    }}
+                    whileInView= {{
+                        x: 0,
+                        opacity: 1
+                    }}
+                    transition={{duration: 0.7}}
+                    viewport={{once: true, amount: 0.6}}
+                >
                     <a href='#' className='cta__link'>
                         <img className='cta__icon' src={appStore} alt="App Store icon" />
                     </a>
                     <a href="#" className="cta__link">
                         <img className='cta__icon' src={googlePlay} alt="Google Play icon" />
                     </a>                    
-                </div>
+                </motion.div>
             </div>
             <img className="cta__background-image" src={patterns.whiteCircles} alt="Circles background" />
         </section>

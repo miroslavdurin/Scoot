@@ -6,6 +6,7 @@ import Map from '../Map/Map';
 import Contact from '../Contact/Contact';
 import Cta from '../Cta/Cta';
 import Footer from '../Footer/Footer';
+import { motion } from 'framer-motion';
 
 import './Locations.css';
 
@@ -20,7 +21,16 @@ function Locations() {
     },[])
 
     return (
-        <>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0,
+            transition: {               
+                type: 'keyframes',               
+                delay: 0.7
+            }}}
+            transition={{ duration: 0.5}}
+        >
             <header>
                 <Navbar />
                 <HeroBanner 
@@ -36,7 +46,7 @@ function Locations() {
                 <Cta />
             </main>
             <Footer />
-        </>
+        </motion.div>
     )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import './Jobs.css';
+import { motion } from 'framer-motion';
 
 function Jobs(props) {
     const {jobs} = props;
-    console.log(jobs)
 
     return (
         <section className="section-jobs mb-160">
@@ -11,7 +11,18 @@ function Jobs(props) {
                 <ul className="jobs__list">
                     {jobs.map((job, i)=>{
                             return (
-                                <li key={i} className="jobs__item mb-24">                        
+                                <motion.li key={i} className="jobs__item mb-24"
+                                    initial={{
+                                        y: 50,
+                                        opacity: 0
+                                    }}
+                                    whileInView= {{
+                                        y: 0,
+                                        opacity: 1
+                                    }}
+                                    transition={{duration: 0.7}}
+                                    viewport={{once: true, amount: 0.6}}
+                                >                        
                                     <div className="jobs__item--left">
                                         <h4 className="heading--h4">
                                             {job.position}
@@ -25,7 +36,7 @@ function Jobs(props) {
                                             Apply
                                         </a>
                                     </div>
-                                </li>
+                                </motion.li>
                             )
                     })}                    
                 </ul>

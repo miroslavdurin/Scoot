@@ -91,6 +91,18 @@
 }
 
 
+@media only screen and (max-width: 722px) {
+    .cta {        
+        padding: 6.2rem 4.5rem;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .cta {        
+        padding: 6.2rem 0rem;
+    }
+}
+
 
 @media only screen and (max-width: 450px) {
     .cta {
@@ -101,7 +113,6 @@
         flex-direction: row;
         gap: 0;
     }
-
     
     .cta__link:first-child {
         margin-right: 0;        

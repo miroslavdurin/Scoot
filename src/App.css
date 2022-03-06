@@ -38,6 +38,8 @@
 }
 
 .button {
+  position: relative;
+  overflow: hidden;
   width: 18rem;
   height: 5.3rem;
   font-size: 1.5rem;
@@ -48,7 +50,21 @@
   background-color: var(--color-yellow);
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;   
+}
+
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 150%;
+  background-color: #fff;
+  transform: translateY(-20%) skewX(-17deg) translateX(-50px);
+   filter: blur(6px) opacity(0.6); 
 }
 
 a.button {
@@ -57,12 +73,20 @@ a.button {
   align-items: center;
 }
 
-.button:hover,
-.button:focus,
-.button:active {
+a.button:hover,
+a.button:active,
+button.button:hover,
+button.button:active {
   outline: none;
   background-color: #fff;
   color: var(--color-yellow);
+  transition: background-color 0.3s ease 0.1s, color 0.3s ease 0.1s;        
+}
+
+.button:hover::after {
+  transform: translateY(-20%) skewX(-20deg) translateX(200px);
+  transition: transform 0.3s ease;
+
 }
 
 .container {

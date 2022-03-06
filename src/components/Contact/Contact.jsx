@@ -1,22 +1,73 @@
 import React from 'react';
 import './Contact.css';
+import { motion } from 'framer-motion';
+
+const variantsLeft = {
+    hidden: {
+        x: -70,
+        opacity: 0
+    },
+
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7
+        }
+    }
+}
+
+const variantsCenter = {
+    hidden: {
+        y: 50,
+        opacity: 0
+    },
+
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7
+        }
+    }
+}
+
+
+const variantsRight = {
+    hidden: {
+        x: 70,
+        opacity: 0
+    },
+
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7
+        }
+    }
+}
 
 function Contact(props) {
     const {title, text, btn} = props.contact
 
     return (
         <section className="section-contact mb-120">
-            <div className="contact container">
-                <h2 className="heading--h2">
+            <motion.div className="contact container"
+                initial="hidden"
+                whileInView="show"
+                viewport={{once: true, amount: 0.5}}
+            >
+                <motion.h2 variants={variantsLeft} className="heading--h2">
                     {title}
-                </h2>
-                <p className="paragraph">
+                </motion.h2>
+                <motion.p variants={variantsCenter} className="paragraph">
                     {text}
-                </p>
-                <a href="#" className="button">
+                </motion.p>
+                <motion.a variants={variantsRight} href="#" className="button">
                     {btn}
-                </a>
-            </div>
+                </motion.a>
+            </motion.div>
         </section>
     )
 }
