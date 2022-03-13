@@ -95,7 +95,7 @@
 }
 
 .nav__mobile-hamburger::after {
-    bottom: -7px;
+    bottom: -7.5px;
 }
 
 .nav__mobile-menu {
