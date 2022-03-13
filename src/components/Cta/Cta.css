@@ -39,6 +39,10 @@
     color: white;
 }
 
+.color-white::selection {
+    color: var(--color-dark-navy);
+}
+
 .cta__background-image {
     position: absolute;
     opacity: 0.1;

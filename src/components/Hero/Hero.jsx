@@ -6,6 +6,116 @@ import {ReactComponent as Line} from '../../assets/patterns/line.svg';
 import {ReactComponent as RightArrow} from '../../assets/patterns/right-arrow.svg';
 import { motion } from 'framer-motion';
 
+const sectionVariants = {
+    hide: {opacity: 0},
+    show: {
+        opacity: 1, 
+        transition: {
+            duration: 0.4,                    
+            type: "keyframes",
+            stiffness: 40,
+            
+        }
+    },
+    exit: {                
+        height: 0,
+        transition: {
+            duration: 0.3,
+            delay: 0.8
+        }
+    }
+}
+
+const contentVariants = {
+    hide: {
+        y: 30, 
+        opacity:0 
+    },
+    show: {
+        y: 0, 
+        opacity: 1, 
+        transition: {
+            delay: 0.2,
+            duration: 0.5,
+            ease: "easeIn"
+        }
+    },
+    exit: {
+        opacity: 0, 
+        y: -50,
+        transition: {
+            duration: 0.4,
+            delay: 0.5
+        }
+    }
+}
+
+const lineVariants = {
+    hide: {scaleX: 0 },
+    show: {
+        scaleX: 1,
+        transition:{
+            delay: 0.6,
+            duration: 0.6
+        } 
+    }
+}
+
+const arrowPointVariants = {
+    hide: {
+        pathLength: 0, 
+        rotateX: 180 
+    },
+    show: {
+        pathLength: 1,
+        transition:{
+            delay: 1.5,
+            duration: 0.3
+        }
+    },
+    exit: {
+        pathLength: 0,
+        transition: {
+            duration: 0.4, 
+            type: "keyframes"
+        }
+    }
+}
+
+const arrowLineVariants = {
+    hide: { pathLength: 0 },
+    show: {
+        pathLength: 1,
+        transition: {
+            delay: 1,
+            duration: 0.7
+        }
+    },
+    exit: {
+        pathLength: 0,
+        transition: {
+            duration: 0.6
+        }
+    }
+}
+
+
+
+
+const overlayVariants = {
+    hide: {
+        x: 0, 
+        y: 0, 
+        opacity:1
+    },
+    show: {
+        y: '200vh', 
+        transition: {
+            delay: 1.5,                                
+            duration: 1
+        }
+    }
+}
 
 function Hero() {
     const {home} = data;
@@ -24,43 +134,20 @@ function Hero() {
     
 
     return (
-        <motion.section className='section-hero intro-overlay mb-160'
-            initial={{opacity: 0 }}
-            animate={{opacity: 1, 
-                transition: {
-                    duration: 0.7,
-                    delay: 0.4,
-                    type: "keyframes",
-                    stiffness: 40,
-                    
-                }
-            }}
-            exit={{                
-                height: 0
-            }}
-        
-            transition={{
-                default: {
-                    duration: 1
-                }
-            }}>           
-            
-            <div className="hero">
-                
+        <motion.section className='section-hero mb-160'
+            initial="hide"
+            animate="show"
+            exit="exit"          
+            variants={sectionVariants}
+        >                    
+            <div className="hero">                
                 <motion.div 
-                    initial={{y: 100, opacity:0 }}
-                    animate={{y:0, opacity: 1, 
-                        transition: {
-                            delay: 0.7,
-                            staggerChildren: 1,                            
-                            duration: 1
-                        }                       
-                    }}
-                    exit={{opacity: 0 }}
-                    
-                    transition={{ duration: 1, }}
-                    className="hero__content container">                       
-                        
+                    initial="hide"
+                    animate="show"
+                    exit="exit"
+                    variants={contentVariants}
+                    className="hero__content container"
+                >                                               
                     <div className="hero__text-box mb-40">
                         <h1 className="heading--h1 mb-40">
                             {home.heroDesktop.spanOne} {home.heroDesktop.spanTwo}
@@ -73,78 +160,51 @@ function Hero() {
                         {home.heroDesktop.btn}
                     </a>
                 </motion.div>
-                <motion.svg className="hero__line"
-                    initial={{scaleX: 0 }}
-                    animate={{scaleX: 1,
-                        transition:{
-                            delay: 1.2,duration: 1
-                    } }}
-                    exit={{scaleX: 0 }}
-                    style={{originX: 0}}
-                    
-                    transition={{ duration: 1,/*  delay:1.2 */}}
-
+                <motion.svg 
+                    className="hero__line"
+                    initial="hide"
+                    animate="show"
+                    exit="hide"
+                    style={{originX: 0}}                    
+                    transition={{ duration: 0.6}}
+                    variants={lineVariants}
                     xmlns="http://www.w3.org/2000/svg" 
                     width="203"
-                    height="15">
-                        <path id="line" fill="none" stroke="#FCB72B" strokeWidth="15" d="M203 7.5H.5"/>
-                </motion.svg>
-                {/* <Line className="hero__line"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1}}
-                />   */}      
+                    height="15"
+                >
+                    <path id="line" fill="none" stroke="#FCB72B" strokeWidth="15" d="M203 7.5H.5"/>
+                </motion.svg>                
 
-                <motion.svg               
-
-
+                <svg           
                     className="hero__right-arrow"
                     xmlns="http://www.w3.org/2000/svg" 
                     width="452" 
                     height="151">
                         <g fill="none" fillRule="evenodd" stroke="#FCB72B" strokeLinejoin="bevel" strokeWidth="15">
                             <motion.path 
-                                initial={{pathLength: 0, rotateX: 180 }}
-                                animate={{pathLength: 1,
-                                    transition:{
-                                        delay: 2.4,
-                                        duration: 0.4
-                                    }
-                                 }}
-                                exit={{pathLength: 0 }}
-                                
-                                transition={{ duration: 0.4, /* delay: 2.4, */ type: "keyframes" }}
+                                initial="hide"
+                                animate="show"
+                                exit="exit"
+                                variants={arrowPointVariants}
                                 d="M407.952 145.444l38.426-38.426-38.426-38.426"/>
                             <motion.path 
-                                initial={{pathLength: 0 }}
-                                animate={{pathLength: 1,
-                                    transition:{
-                                        delay: 1.7,
-                                        duration: 1
-                                    }
-                                }}
-                                exit={{pathLength: 0 }}
-                                
-                                transition={{ duration: 1, /* delay: 1.7 */}}
+                                initial="hide"
+                                animate="show"
+                                exit="exit"                          
+                                variants={arrowLineVariants}
                             d="M0 8h270.115v99.369h176.263"/>
                         </g>
-                </motion.svg>        
-                {/* <RightArrow className="hero__right-arrow" /> */}
+                </svg>  
                 <img className="hero__circles" src={patterns.whiteCircles} alt="white circles pattern" />
 
                 <motion.div className="intro-overlay" 
-                        initial={{x: 0, y: 0, opacity:1, width: "100%", height:"100%" }}
-                        animate={{y: '100vh',  
-                            transition: {
-                                delay: 2.2,                                
-                                duration: 0.8
-                            }                       
-                        }}
-                    />
+                        initial="hide"
+                        animate="show"
+                        variants={overlayVariants}  
+                />
             </div>
         </motion.section>
-  )
+    )
 }
 
 export default Hero

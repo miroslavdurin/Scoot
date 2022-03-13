@@ -52,23 +52,23 @@ function Contact(props) {
     const {title, text, btn} = props.contact
 
     return (
-        <section className="section-contact mb-120">
+        <motion.section className="section-contact mb-120">
             <motion.div className="contact container"
                 initial="hidden"
                 whileInView="show"
                 viewport={{once: true, amount: 0.5}}
             >
-                <motion.h2 variants={variantsLeft} className="heading--h2">
+                <motion.h2  variants={variantsCenter} className="heading--h2">
                     {title}
                 </motion.h2>
                 <motion.p variants={variantsCenter} className="paragraph">
                     {text}
                 </motion.p>
-                <motion.a variants={variantsRight} href="#" className="button">
+                <motion.a variants={variantsCenter} href="#" className="button">
                     {btn}
                 </motion.a>
             </motion.div>
-        </section>
+        </motion.section>
     )
 }
 

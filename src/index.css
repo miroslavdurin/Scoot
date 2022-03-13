@@ -5,7 +5,7 @@
   --font-sub: 'Lexend Deca', sans-serif;
 
   --color-dark: #333A44;
-  --color-yellow: #FCB72B;
+  --color-yellow: rgb(252, 183, 43);
   --color-light-yellow: #FFF4DF;
   --color-dark-navy: #495567;
   --color-dim-grey: #939CAA;
@@ -84,11 +84,9 @@ code {
 } */
 
 
-/* 
 ::selection {
-    background-color: $color-primary;
-    color: $color-white;
-} */
+    background-color: rgba(253, 200, 93, 0.65);   
+}
 
 /* .slide-bottom {
   -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;

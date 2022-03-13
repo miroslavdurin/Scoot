@@ -65,6 +65,10 @@
     line-height: 0;
 }
 
+.footer__link::selection {
+    color: var(--color-dark);
+}
+
 .footer__item--icon svg {
     transition: fill 0.2s ease;
 }

@@ -1,3 +1,7 @@
+.App {
+  overflow: hidden;
+}
+
 .heading--h1 {
   color: #fff;
   font-size: 5.6rem;
@@ -35,6 +39,10 @@
   font-size: 1.5rem;
   line-height: 2.5rem;
   color: var(--color-dim-grey);
+}
+
+.paragraph::selection {
+  color: var(--color-dark-navy);
 }
 
 .button {
@@ -87,6 +95,10 @@ button.button:active {
   transform: translateY(-20%) skewX(-20deg) translateX(200px);
   transition: transform 0.3s ease;
 
+}
+
+.button::selection {
+  color: var(--color-dark-navy);
 }
 
 .container {

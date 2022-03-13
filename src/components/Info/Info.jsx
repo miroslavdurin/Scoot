@@ -8,6 +8,7 @@ import {ReactComponent as LeftUpwardArrow} from '../../assets/patterns/left-upwa
 
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useMediaQuery } from '../../helpers/hooks';
 
 
 const container = {
@@ -17,34 +18,86 @@ const container = {
         opacity: 1,
         x: 0,
         transition: {
-            duration: 1,
+            duration: 0.6,
         }
-    }                    
+    },                
 }
 
 const containerReversed = {
-    hide: {opacity: 0,
-    x: 50,},
+    hide: {
+        opacity: 0,
+         x: 50
+    },
     show: {
         opacity: 1,
         x: 0,
         transition: {
-            duration: 1,
+            duration: 0.6,
         }
-    }                    
+    },                   
+}
+
+const imageVariants = {
+    hide: {
+        opacity: 0,
+        x: -150,},
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.7,
+            delay: 0.2
+        }
+    }, 
+}
+
+const imageVariantsReversed = {
+    hide: {
+        opacity: 0,
+        x: 150,},
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.7,
+                delay: 0.2
+            }
+        }     
+}
+
+const circleVariants = {
+    hide: {
+        opacity: 0,
+        x: -80,},
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.7,
+            }
+        }     
+}
+
+const circleVariantsReversed = {
+    hide: {
+        opacity: 0,
+        x: 80,},
+        show: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.7,
+            }
+        }     
 }
 
 function Info(props) {
-    const {info} = props;
-    const {isReversed, arrow /* isArrowBottomDown, isArrowBottomUp, isArrowTop */, mb, hasBtn} = props;
-    const [loaded, setLoaded] = useState(false);
+    const {info, screen} = props;
+    const {isReversed, arrow, mb, hasBtn} = props;
     let imgContainerPos;
     let infoCirclesRight;
-    let infoCirclesLeft;
+    let infoCirclesLeft;   
 
-    const [ref, inView] = useInView({
-        threshold: 0.8
-    });
     const animationLine = useAnimation();
     const animationPoint = useAnimation();
 
@@ -53,6 +106,27 @@ function Info(props) {
         if(arrow === 'isArrowBottomDown') return "info__arrow--left-bottom-down"
         else if(arrow === 'isArrowBottomUp') return "info__arrow--left-bottom-up"
         else return "info__arrow--left-top"
+    }
+
+    function animateArrow() {
+        animationLine.start(
+            {
+                pathLength: 1,
+                transition: {
+                    duration: 0.6,
+                }               
+            }
+        ).then(()=>{
+            animationPoint.start(
+                {
+                    pathLength:1,
+                    transition: {
+                        duration: 0.2,
+                }
+                 
+            }
+        )
+        })
     }
  
     useEffect(()=> {
@@ -65,46 +139,10 @@ function Info(props) {
         infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));
 
 
-        animationLine.set({ pathLength:0 });
-        animationPoint.set({ pathLength:0 });      
-
-        if(inView && !loaded) {
-
-            animationLine.start(
-                {
-                    pathLength:1,
-                    transition: {
-                        duration: 1,
-                    }               
-                }
-            ).then(()=>{
-                animationPoint.start(
-                    {
-                        pathLength:1,
-                        transition: {
-                            duration: 0.5,
-                    }
-                     
-                }
-            )
-                setLoaded(true);
-            })
-           
-        }        
-
-        if(loaded) {
-            animationLine.stop();
-            animationPoint.stop();
-            
-            animationLine.set({
-                pathLength: 1
-            })
-            animationPoint.set({
-                pathLength:1
-            })
-        }
+        animationLine.set({ pathLength: 0 });
+        animationPoint.set({ pathLength:0, rotateX: 180 });        
         
-    }, [inView]);
+    }, []);
 
     window.addEventListener('resize', ()=> {         
         imgContainerPos = document.querySelector('.container').getBoundingClientRect();
@@ -117,22 +155,13 @@ function Info(props) {
 
 
     return (
-        <motion.section ref={ref}
-            /* initial={{ opacity: 0, y:100 }}
-            
-            whileInView={{ opacity: 1, y:0,
-            transition: {
-                duration: 0.7,
-                
-            } }}
-            viewport={{ once: true, amount: 0.7}} */
-            
-        className={`section-info ${mb}`}>
+        <motion.section            
+            className={`section-info ${mb}`}>
             <div className={`info container ${isReversed && 'info--reverse'}`}>
                 <motion.div className="info--left"                 
                     initial="hide"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.7}}
+                    whileInView="show"                    
+                    viewport={{ once: true, amount: 0.8}}
                     transition={{staggerChildren:0.1}}
                 >
                     <motion.h2 
@@ -158,16 +187,17 @@ function Info(props) {
                 </motion.div>
                 <motion.div className="info--right"
                     initial="hide"
-                    whileInView="show"
+                    whileInView="show"                    
                     viewport= {{ once: true, amount: 0.5}}
-                    transition= {{staggerChildren:0.2}}                    
+                    transition= {{staggerChildren: 0.2}}   
+                    onAnimationComplete={animateArrow}                 
                 >
                     <motion.div  className="info__img-container"
-                    variants={!isReversed ? containerReversed : container}>
+                    variants={!isReversed ? imageVariantsReversed : imageVariants}>
                         <img src={info.image} alt="info image" className="info__img" />
                     </motion.div>
                     
-                    <motion.img variants={!isReversed ? containerReversed : container} src={patterns.circle} alt="circle patterns" className={`info__circle`} />
+                    <motion.img variants={!isReversed ? circleVariantsReversed : circleVariants} src={patterns.circle} alt="circle patterns" className={`info__circle`} />
                 </motion.div>
             </div>
             {
@@ -186,28 +216,7 @@ function Info(props) {
                     <motion.path animate={animationLine} id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
                     <motion.path animate={animationPoint} id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
                 </svg>
-            }
-            
-            {/* <svg 
-               
-            
-            width="1015" height="151" className="info__arrow--right" viewBox="0 0 1015 151" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g id="Group 13"
-                    
-                    
-                >
-                    <motion.path                         
-                        animate={animation}
-                    
-                    id="corner" d="M185 8.5V106H8" stroke="#FCB72B" strokeWidth="15"  strokeLinejoin="bevel"/>
-                    <motion.path animate={animation} id="line" d="M1007 8H185" stroke="#FCB72B" strokeWidth="15" strokeLinecap="round" />
-                    <motion.path animate={animation} id="arrow" d="M46.4263 144.853L8 106.426L46.4263 68" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel" />
-                </g>
-            </svg> */}
-
-
-            {/* {isReversed && <LeftDownwardArrow className="info__arrow--right"/>}            
-            {!isReversed && <LeftDownwardArrow className={arrowChoice(arrow)} />} */}
+            }                       
         </motion.section>
     )
 }

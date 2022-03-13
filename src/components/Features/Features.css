@@ -34,11 +34,11 @@
     }
 
     .features__line {
+        transform-origin: top;
         height: 59rem;
         width: 1.5rem;
-        top: 0;
-        left: 14.6rem;
-        transform: translateX(-50%) translateY(-16rem);
+        top: -16rem;
+        left: 13.8rem;
     }
 
     .features {
@@ -64,7 +64,7 @@
 
 @media only screen and (max-width: 740px) {
     .features__line {        
-        transform: translateX(-50%) translateY(-12rem);        
+        top: -13rem;    
     }
 }
 
@@ -75,8 +75,7 @@
 
     .features__line {
         height: 60rem;
-        transform: translateX(-5.4rem) translateY(-12rem);
-
+        left: 9rem;
     }
 }
 

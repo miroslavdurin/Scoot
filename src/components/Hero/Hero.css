@@ -4,6 +4,7 @@
     background-repeat: no-repeat;
     background-position: top left;
     overflow: hidden;
+    transform-origin: top;
 }
 
 .section-hero .intro-overlay {
@@ -56,13 +57,14 @@ svg.hero__line {
 .hero__right-arrow {
     position: absolute;
     z-index: 2;
-    top: 35.5rem;
+    top: 35rem;
     left: var(--hero-arrow-x-offset);
 }
 
 .hero__circles {
     position: absolute;
     right: 0;
+    bottom: 16.5rem;
     transform: translateX(5rem);
 }
 
@@ -74,6 +76,10 @@ svg.hero__line {
 
     .hero__description {
         max-width: 45%;
+    }
+        
+    .hero__circles {
+        bottom: 4.5rem;
     }
 }
 
@@ -136,6 +142,7 @@ svg.hero__line {
 } 
 
 @media only screen and (max-width: 720px) {
+    
     .hero {
         padding: 23.3rem 0 21.7rem;       
     }
@@ -143,7 +150,8 @@ svg.hero__line {
 
 @media only screen and (max-width: 450px) {       
     .section-hero {
-        background-image: var(--background-hero-mobile);
+        background-image: var(--background-hero-mobile);       
+        
     }
 
     .hero {

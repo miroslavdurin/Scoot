@@ -49,16 +49,25 @@
 }
 
 .faqs__answer {
-    display: none;
-    padding: 1rem 4rem 3.2rem;
+    padding: 0 4rem 0rem;
+    transition: all 0.3s ease;
 }
 
 .faqs__answer .paragraph {
-    color: var(--color-dark-navy);
+    color: var(--color-dark-navy);    
+    overflow: hidden;    
+    max-height: 0;
+    transition: all 0.2s ease;
+}
+
+.faqs__answer.show .paragraph{
+    max-height: 300px;    
+    transition: all 0.3s ease-in-out;
 }
 
 .faqs__answer.show {
-    display: block;
+    padding: 1rem 4rem 3.2rem;
+    transition: all 0.3s ease-in-out;
 }
 
 @media only screen and (max-width: 768px) {

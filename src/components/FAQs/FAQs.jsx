@@ -3,8 +3,9 @@ import './FAQs.css';
 import { data, icons } from '../../constants/index';
 import { motion } from 'framer-motion';
 
-const variants = {
-    hidden: {
+
+const variantsQuestion = {
+    hide: {
         y: 20,
         opacity: 0
     },
@@ -12,9 +13,22 @@ const variants = {
         y: 0,
         opacity: 1,
         transition: {
-            duration: 1
+            duration: 0.5
         }
     }
+}
+
+const variantsTitle = {
+    hide: {
+        opacity: 0
+    },
+    show: {
+        opacity: 1,
+        transition: {
+            duration: 0.7
+        }
+        
+    }    
 }
 
 function FAQs() {
@@ -29,31 +43,19 @@ function FAQs() {
         <section className="section-faqs mb-160">
             <div className="faqs container">
                 <motion.h2 className="heading--h2 mb-64"
-                    initial={{
-                        y: 50,
-                        opacity: 0
-                    }}
-                    whileInView={{
-                        y: 0,
-                        opacity: 1
-                    }}
+                    initial="hide"
+                    whileInView="show"
                     viewport={{ once: true, amount: 0.5}}
-                    transition={{duration: 1}}
+                    variants={variantsTitle}
                 >
                     FAQs
                 </motion.h2>
                 <div className="faqs__container mb-64">
                     <motion.div className="faqs__title"
-                        initial={{
-                            x: -50,
-                            opacity: 0
-                        }}
-                        whileInView={{
-                            x: 0,
-                            opacity: 1
-                        }}
+                        initial="hide"
+                        whileInView="show"
                         viewport={{ once: true, amount: 0.5}}
-                        transition={{duration: 1}}
+                        variants={variantsTitle}
                     >
                         <h3 className="heading--h3">
                             {faqOne.title}
@@ -61,8 +63,9 @@ function FAQs() {
                     </motion.div>
                     <div className="faqs__questions" >
                         <motion.div 
-                            variants={variants} 
-                            initial="hidden"
+                            layout
+                            variants={variantsQuestion} 
+                            initial="hide"
                             whileInView="show"  
                             viewport={{once: true, amount: 0.6}} 
                             className="faqs__content">
@@ -79,9 +82,9 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div 
-                            initial="hidden"
+                            initial="hide"
                             whileInView="show"  
-                            variants={variants} 
+                            variants={variantsQuestion} 
                             viewport={{once: true, amount: 0.6}} 
                             className="faqs__content"
                         >
@@ -98,9 +101,9 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div 
-                            initial="hidden"
+                            initial="hide"
                             whileInView="show"  
-                            variants={variants} 
+                            variants={variantsQuestion} 
                             viewport={{once: true, amount: 0.6}} 
                             className="faqs__content"
                         >
@@ -121,16 +124,10 @@ function FAQs() {
 
                 <div className="faqs__container mb-64">
                     <motion.div className="faqs__title"
-                        initial={{
-                            x: -50,
-                            opacity: 0
-                        }}
-                        whileInView={{
-                            x: 0,
-                            opacity: 1
-                        }}
+                        initial="hide"
+                        whileInView="show"
                         viewport={{ once: true, amount: 0.5}}
-                        transition={{duration: 1}}
+                        variants={variantsTitle}
                     >
                         <h3 className="heading--h3">
                             {faqTwo.title}
@@ -138,8 +135,8 @@ function FAQs() {
                     </motion.div>
                     <div className="faqs__questions">
                         <motion.div className="faqs__content"
-                            variants={variants} 
-                            initial="hidden"
+                            variants={variantsQuestion} 
+                            initial="hide"
                             whileInView="show"  
                             viewport={{once: true, amount: 0.6}}
                         >
@@ -156,8 +153,8 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div className="faqs__content"
-                            variants={variants} 
-                            initial="hidden"
+                            variants={variantsQuestion} 
+                            initial="hide"
                             whileInView="show"  
                             viewport={{once: true, amount: 0.6}}
                         >
@@ -174,8 +171,8 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div className="faqs__content"
-                            variants={variants} 
-                            initial="hidden"
+                            variants={variantsQuestion} 
+                            initial="hide"
                             whileInView="show"  
                             viewport={{once: true, amount: 0.6}}
                         >

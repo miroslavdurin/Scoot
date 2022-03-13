@@ -20,7 +20,8 @@
 }
 
 
-@media only screen and (max-width: 1440px) {
+@media only screen and (max-width: 1440px) {  
+
     .hero-banner__circles {
         transform: translateX(0);
         margin-right: -13rem;
@@ -45,10 +46,10 @@
 @media only screen and (max-width: 720px) {
     .hero-banner {
         text-align: center;
+        margin-top: 9.6rem;
     }
 
     .hero-banner__content {
-        padding-top: 16.4rem;
         justify-content: center;
     }
 
@@ -63,9 +64,7 @@
         margin-bottom: 7.2rem;
     }
 
-    .hero-banner__content {
-        padding: 6rem 0;
-    }
+    
 
     .hero-banner__content.container {
         margin-left: 3.2rem;

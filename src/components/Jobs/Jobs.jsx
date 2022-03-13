@@ -2,6 +2,20 @@ import React from 'react';
 import './Jobs.css';
 import { motion } from 'framer-motion';
 
+const variants = {
+    hide: {
+        y: 50,
+        opacity: 0
+    },
+    show: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.7
+        }
+    }
+}
+
 function Jobs(props) {
     const {jobs} = props;
 
@@ -12,15 +26,9 @@ function Jobs(props) {
                     {jobs.map((job, i)=>{
                             return (
                                 <motion.li key={i} className="jobs__item mb-24"
-                                    initial={{
-                                        y: 50,
-                                        opacity: 0
-                                    }}
-                                    whileInView= {{
-                                        y: 0,
-                                        opacity: 1
-                                    }}
-                                    transition={{duration: 0.7}}
+                                    initial="hide"
+                                    whileInView="show"
+                                    variants={variants}
                                     viewport={{once: true, amount: 0.6}}
                                 >                        
                                     <div className="jobs__item--left">

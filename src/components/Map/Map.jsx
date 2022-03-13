@@ -1,13 +1,29 @@
 import React from 'react';
 import './Map.css';
+import { motion } from 'framer-motion';
+
+const variants = {
+    hide: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            duration: 0.5,
+            delay: 1
+        }
+    }
+}
 
 function Map(props) {
     const {mapDesktop, mapTablet, mapMobile, locations} = props;
 
     return (
-        <section className="section-map mb-120">
-            <div className="map container">
-                
+        <motion.section         
+            className="section-map mb-120"
+            variants={variants}
+            initial="hide"
+            animate="show"
+        >
+            <div className="map container">                
                 <picture>
                     <source srcSet={mapMobile} media="(max-width: 720px)" alt="world map" className="map__image"/>
                     <source srcSet={mapTablet} media="(max-width: 768px)" alt="world map" className="map__image"/>
@@ -38,7 +54,7 @@ function Map(props) {
                     </h4>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 
