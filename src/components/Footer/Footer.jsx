@@ -33,7 +33,7 @@ function Footer() {
             >    
                 <div className="footer--left-side">
                     <div className="footer__logo-box">
-                        <a href="#">
+                        <a href="#" aria-label="footer logo">
                             <FooterLogo className="footer__logo" />
                         </a>
                     </div>
