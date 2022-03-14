@@ -52,17 +52,17 @@ function Footer() {
                 <div className="footer--right-side">
                     <ul className="footer__links">
                         <li className="footer__item footer__item--icon">
-                            <a href="#" className="footer__link">
+                            <a href="#" className="footer__link" aria-label="Facebook icon">
                                 <FacebookIcon />
                             </a>
                         </li>
                         <li className="footer__item footer__item--icon">
-                            <a href="#" className="footer__link">
+                            <a href="#" className="footer__link" aria-label="Twitter icon">
                                 <TwitterIcon />
                             </a>
                         </li>
                         <li className="footer__item footer__item--icon">
-                            <a href="#" className="footer__link">
+                            <a href="#" className="footer__link" aria-label="Instagram icon">
                                 <InstagramIcon />
                             </a>
                         </li>
