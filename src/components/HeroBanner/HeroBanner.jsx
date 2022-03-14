@@ -35,6 +35,7 @@ const variantsElement = {
 
 function HeroBanner(props) {
     const {title, backgroundDesk, backgroundTab, backgroundMob} = props;    
+    console.log(backgroundDesk)
 
     const screen = useMediaQuery('(max-width: 720px)');
 

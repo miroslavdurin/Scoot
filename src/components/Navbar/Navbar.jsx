@@ -81,7 +81,7 @@ function Navbar({isHome}) {
         >        
             <div className="nav--left-side">     
                 <button aria-label="mobile navigation" className="nav__mobile-button" onClick={handleOpen}>
-                    <div className={`nav__mobile-hamburger ${isOpen && 'active'}`} />
+                    <span className={`nav__mobile-hamburger ${isOpen && 'active'}`} />
                 </button>       
                 <div className="nav__logo-box" >
                     <NavLink to="/">

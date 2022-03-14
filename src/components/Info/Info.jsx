@@ -4,7 +4,6 @@ import './Info.css';
 import { patterns } from '../../constants/index';
 import { motion, useAnimation } from 'framer-motion';
 
-
 const container = {
     hide: {opacity: 0,
     x: -50,},
@@ -166,7 +165,7 @@ function Info(props) {
                 >
                     <motion.div  className="info__img-container"
                     variants={!isReversed ? imageVariantsReversed : imageVariants}>
-                        <img src={info.image} alt="info image" className="info__img" />
+                        <img src={info.image} alt="info" className="info__img" />
                     </motion.div>
                     
                     <motion.img variants={!isReversed ? circleVariantsReversed : circleVariants} src={patterns.circle} alt="circle patterns" className={`info__circle`} />
@@ -176,8 +175,8 @@ function Info(props) {
                 isReversed && 
                 
                 <svg className="info__arrow--right" width="1005" height="151" viewBox="0 0 1005 151" fill="none" xmlns="http://www.w3.org/2000/svg">                
-                    <motion.path /* animate={animationLine} */ id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
-                    <motion.path /* animate={animationPoint} */ id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
+                    <motion.path /* animate={animationLine} */ d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
+                    <motion.path /* animate={animationPoint} */ d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
                 </svg>
             }
 
@@ -185,8 +184,8 @@ function Info(props) {
                 !isReversed &&
                 
                 <svg className={arrowChoice(arrow)} width="1005" height="151" viewBox="0 0 1005 151" fill="none" xmlns="http://www.w3.org/2000/svg">                
-                    <motion.path /* animate={animationLine}  */id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
-                    <motion.path /* animate={animationPoint} */ id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
+                    <motion.path /* animate={animationLine}  */ d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
+                    <motion.path /* animate={animationPoint} */ d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
                 </svg>
             }                       
         </motion.section>
