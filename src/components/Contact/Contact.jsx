@@ -2,21 +2,6 @@ import React from 'react';
 import './Contact.css';
 import { motion } from 'framer-motion';
 
-const variantsLeft = {
-    hidden: {
-        x: -70,
-        opacity: 0
-    },
-
-    show: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.7
-        }
-    }
-}
-
 const variantsCenter = {
     hidden: {
         y: 50,
@@ -25,22 +10,6 @@ const variantsCenter = {
 
     show: {
         y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.7
-        }
-    }
-}
-
-
-const variantsRight = {
-    hidden: {
-        x: 70,
-        opacity: 0
-    },
-
-    show: {
-        x: 0,
         opacity: 1,
         transition: {
             duration: 0.7

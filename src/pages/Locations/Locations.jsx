@@ -59,8 +59,9 @@ function Locations() {
                 /> 
             </header>
             <main>
-                <Map mapDesktop={mapDesktop} mapTablet={mapTablet} mapMobile={mapMobile} locations={locations} />  {/* //TODO Load event */}
-                { loaded && <Contact contact={contact}/> }
+                <Map mapDesktop={mapDesktop} mapTablet={mapTablet} mapMobile={mapMobile} locations={locations} />  
+                {/* If the image didn't load instantly Contact components came in view to early*/}
+                { loaded && <Contact contact={contact}/> } 
                 <Cta />           
             </main>
             <Footer />

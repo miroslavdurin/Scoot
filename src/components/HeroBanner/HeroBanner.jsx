@@ -38,20 +38,24 @@ function HeroBanner(props) {
 
     const screen = useMediaQuery('(max-width: 720px)');
 
+    /* Function used to avoid weird flickering during the exit animation on a mobile view*/
+    /* Margin top property was pushing the entire navbar down by 96px */
+    /* The other solution was to use padding instead of margin-top, but that */
+    /* was stretching the position of a banner background */
+
     function onStart(e){
         if(e==="exit"){
-            console.log('true')
             document.querySelector('.hero-banner').style.marginTop=0;
             if(screen) document.querySelector('.hero-banner').style.paddingTop='96px';
         }
     }
 
+    /* Setting image paths on CSS variables */
     useEffect(()=>{
         const banner = document.querySelector('.hero-banner')
         banner.style.setProperty('--background-desktop', `url("${backgroundDesk}")`);
         banner.style.setProperty('--background-tablet', `url("${backgroundTab}")`);
         banner.style.setProperty('--background-mobile', `url("${backgroundMob}")`);
-
     },[])
 
     return (
@@ -69,8 +73,7 @@ function HeroBanner(props) {
                     >
                         {title}
                     </motion.h1>
-                    <motion.img variants={variantsElement} className="hero-banner__circles" src={patterns.whiteCircles} alt="white circles" />
-                
+                    <motion.img variants={variantsElement} className="hero-banner__circles" src={patterns.whiteCircles} alt="white circles" />                
             </div>
         </motion.div>
     )

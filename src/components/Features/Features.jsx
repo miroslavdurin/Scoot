@@ -2,11 +2,8 @@ import React from 'react';
 import './Features.css';
 import { data } from '../../constants';
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect, useRef } from 'react';
-import { useMediaQuery } from '../../helpers/hooks';
 import { useState } from 'react';
 import { useWindowSize } from '../../helpers/hooks';
-
 
 const variants = {
     hide: { y:50, opacity: 0 },
@@ -17,8 +14,7 @@ const variants = {
     }
 }
 
-function Features({screen}) {
-    const [scr, setScr] = useState("");
+function Features() {
     const [isLoaded, setIsLoaded] = useState(false)
     const {features} = data.home;
     const altTags = ['locate icon', 'scooter icon', 'ride icon'];      
@@ -27,6 +23,7 @@ function Features({screen}) {
    
     const lineAnimation = useAnimation();
 
+    /* Animation function which is triggered after the last feature card has loaded */
     function handleComplete() {
         size.width > 768 ? 
             lineAnimation.start({
@@ -42,13 +39,12 @@ function Features({screen}) {
                     duration: 0.3
                 }
             })
-    }
-    
+    }    
 
+    /* Making sure that the content is shown after the hero animation had started */
     setTimeout(()=>{
         setIsLoaded(true)
     }, 500);
-
    
     return (        
         isLoaded  &&

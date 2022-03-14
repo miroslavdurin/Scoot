@@ -1,14 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useEffect } from 'react';
 import './Info.css';
-import { data, patterns } from '../../constants';
-import {ReactComponent as RightArrow} from '../../assets/patterns/right-arrow.svg'
-import {ReactComponent as LeftDownwardArrow} from '../../assets/patterns/group.svg'
-import {ReactComponent as LeftUpwardArrow} from '../../assets/patterns/left-upward-arrow.svg'
-
+import { patterns } from '../../constants/index';
 import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useMediaQuery } from '../../helpers/hooks';
 
 
 const container = {
@@ -92,22 +86,20 @@ const circleVariantsReversed = {
 }
 
 function Info(props) {
-    const {info, screen} = props;
-    const {isReversed, arrow, mb, hasBtn} = props;
-    let imgContainerPos;
-    let infoCirclesRight;
-    let infoCirclesLeft;   
-
-    const animationLine = useAnimation();
-    const animationPoint = useAnimation();
-
-
+    const {info} = props;
+    const {isReversed, arrow, mb, hasBtn} = props;     
+    
+    /* Function for choosing which arrow to use */
     const arrowChoice = arrow =>{
         if(arrow === 'isArrowBottomDown') return "info__arrow--left-bottom-down"
         else if(arrow === 'isArrowBottomUp') return "info__arrow--left-bottom-up"
         else return "info__arrow--left-top"
     }
 
+    const animationLine = useAnimation();
+    const animationPoint = useAnimation();   
+
+    /* Animating the arrow after the inView animations had loaded */
     function animateArrow() {
         animationLine.start(
             {
@@ -122,37 +114,17 @@ function Info(props) {
                     pathLength:1,
                     transition: {
                         duration: 0.2,
-                }
-                 
-            }
-        )
+                    }
+                } 
+            )        
         })
     }
  
     useEffect(()=> {
-        imgContainerPos = document.querySelector('.container').getBoundingClientRect();
-       
-        infoCirclesRight = document.querySelectorAll('.info__circle'); 
-        infoCirclesLeft = document.querySelectorAll('.info__circle--reverse');
-        
-        infoCirclesRight.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.right + 65}px`));
-        infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));
-
-
+        /* Setting initianl length of an arrow */
         animationLine.set({ pathLength: 0 });
-        animationPoint.set({ pathLength:0, rotateX: 180 });        
-        
-    }, []);
-
-    window.addEventListener('resize', ()=> {         
-        imgContainerPos = document.querySelector('.container').getBoundingClientRect();
-        infoCirclesRight = document.querySelectorAll('.info__circle'); 
-        infoCirclesLeft = document.querySelectorAll('.info__circle--reverse');
-
-        infoCirclesRight.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.right + 65}px`));
-        infoCirclesLeft.forEach(circle=>circle.style.setProperty('--left-position', `${imgContainerPos.left - 510}px`));       
-    }) 
-
+        animationPoint.set({ pathLength:0, rotateX: 180 });              
+    }, []);   
 
     return (
         <motion.section            
@@ -162,7 +134,7 @@ function Info(props) {
                     initial="hide"
                     whileInView="show"                    
                     viewport={{ once: true, amount: 0.8}}
-                    transition={{staggerChildren:0.1}}
+                    transition={{ staggerChildren:0.1 }}
                 >
                     <motion.h2 
                         className="heading--h2 mb-24"
@@ -189,7 +161,7 @@ function Info(props) {
                     initial="hide"
                     whileInView="show"                    
                     viewport= {{ once: true, amount: 0.5}}
-                    transition= {{staggerChildren: 0.2}}   
+                    transition= {{ staggerChildren: 0.2 }}   
                     onAnimationComplete={animateArrow}                 
                 >
                     <motion.div  className="info__img-container"

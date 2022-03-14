@@ -1,9 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import './Hero.css';
-import { data, images, patterns } from '../../constants';
-import {ReactComponent as Line} from '../../assets/patterns/line.svg';
-import {ReactComponent as RightArrow} from '../../assets/patterns/right-arrow.svg';
+import { data, patterns } from '../../constants/index';
 import { motion } from 'framer-motion';
 
 const sectionVariants = {
@@ -37,7 +35,7 @@ const contentVariants = {
         transition: {
             delay: 0.2,
             duration: 0.5,
-            ease: "easeIn"
+            ease: "easeOut"
         }
     },
     exit: {
@@ -56,7 +54,8 @@ const lineVariants = {
         scaleX: 1,
         transition:{
             delay: 0.6,
-            duration: 0.6
+            duration: 0.3,
+            ease: "linear"
         } 
     }
 }
@@ -87,7 +86,7 @@ const arrowLineVariants = {
     show: {
         pathLength: 1,
         transition: {
-            delay: 1,
+            delay: 0.9,
             duration: 0.7
         }
     },
@@ -99,9 +98,6 @@ const arrowLineVariants = {
     }
 }
 
-
-
-
 const overlayVariants = {
     hide: {
         x: 0, 
@@ -111,7 +107,7 @@ const overlayVariants = {
     show: {
         y: '200vh', 
         transition: {
-            delay: 1.5,                                
+            delay: 1.7,                                
             duration: 1
         }
     }
@@ -121,6 +117,8 @@ function Hero() {
     const {home} = data;
     let root = document.documentElement;
     
+    /* Dinamically calculating the width of the line on the left and a position of an arrow on the right  */
+    /* Using CSS variables */
     useEffect(()=>{
         let paragraph = document.querySelector('.hero__description');
         root.style.setProperty('--line-width', (paragraph.getBoundingClientRect().x - 57) + 'px')
@@ -132,7 +130,6 @@ function Hero() {
         } )
     }, [])
     
-
     return (
         <motion.section className='section-hero mb-160'
             initial="hide"

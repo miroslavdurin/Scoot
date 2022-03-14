@@ -28,7 +28,7 @@ const variants = {
     }
 }
 
-function Home({screen}) {   
+function Home() {   
     const {info} = data.home;
     
     useEffect(()=>{
@@ -43,17 +43,17 @@ function Home({screen}) {
             variants={variants}
         >
             <header>
-                <Navbar screen={screen} isHome={true} />   
-                <Hero screen={screen} /> 
+                <Navbar isHome={true} />   
+                <Hero /> 
             </header>                          
             <main>
-                <Features screen={screen} />                
-                <Info screen={screen} info={info[0]} mb="mb-160" hasBtn={true} isReversed={false}  arrow={'isArrowBottomDown'}/>
-                <Info screen={screen} info={info[1]} mb="mb-160" hasBtn={true} isReversed={true}  />
-                <Info screen={screen} info={info[2]} mb="mb-200" hasBtn={true} isReversed={false} arrow={'isArrowUp'}/>
-                <Cta screen={screen} />                  
+                <Features />                
+                <Info info={info[0]} mb="mb-160" hasBtn={true} isReversed={false}  arrow={'isArrowBottomDown'}/>
+                <Info info={info[1]} mb="mb-160" hasBtn={true} isReversed={true}  />
+                <Info info={info[2]} mb="mb-200" hasBtn={true} isReversed={false} arrow={'isArrowUp'}/>
+                <Cta />                  
             </main>            
-            <Footer screen={screen} />               
+            <Footer />               
         </ motion.div>
     )
 }
