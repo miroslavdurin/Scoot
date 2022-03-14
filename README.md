@@ -26,15 +26,15 @@ Users should be able to:
 
 ### Screenshot
 
-![Home page](https://ibb.co/hMxV6vB)
-![About](https://ibb.co/f9h98xW)
-![Locations](https://ibb.co/qm1w44X)
-![Careers](https://ibb.co/QdysSXh)
+[Home page](https://ibb.co/hMxV6vB)
+[About](https://ibb.co/f9h98xW)
+[Locations](https://ibb.co/qm1w44X)
+[Careers](https://ibb.co/QdysSXh)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/miroslavdurin/Scoot)
-- Live Site URL: [Add live site URL here](https://scoot-mdurin.netlify.app)
+- Solution URL: [GitHub](https://github.com/miroslavdurin/Scoot)
+- Live Site URL: [Scoot](https://scoot-mdurin.netlify.app)
 
 ## My process
 
