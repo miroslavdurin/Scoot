@@ -26,10 +26,10 @@ Users should be able to:
 
 ### Screenshot
 
-[Home page](https://ibb.co/hMxV6vB)
-[About](https://ibb.co/f9h98xW)
-[Locations](https://ibb.co/qm1w44X)
-[Careers](https://ibb.co/QdysSXh)
+- [Home page](https://ibb.co/hMxV6vB)
+- [About](https://ibb.co/f9h98xW)
+- [Locations](https://ibb.co/qm1w44X)
+- [Careers](https://ibb.co/QdysSXh)
 
 ### Links
 
@@ -67,4 +67,4 @@ I might revisit some timing functions on animations and I should also implement 
 ## Author
 
 - Frontend Mentor - [@miroslavdurin](https://www.frontendmentor.io/profile/miroslavdurin)
-- GitHub - [@miroslavdurin](https://www.twitter.com/miroslavdurin)
+- GitHub - [@miroslavdurin](https://www.github.com/miroslavdurin)

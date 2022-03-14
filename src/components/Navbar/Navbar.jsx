@@ -66,7 +66,7 @@ function Navbar({isHome}) {
 
     return (
         <motion.nav className='nav container'
-            initial={{ opacity: 0 }}
+            /* initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ 
                 opacity: 0,
@@ -75,7 +75,7 @@ function Navbar({isHome}) {
                     duration: 0.4,
                     delay: 0.4
                 }
-            }}
+            }} */
             
             transition={{ duration: 0.6, delay: isHome ? 0 : 0.8}} 
         >        
@@ -90,10 +90,10 @@ function Navbar({isHome}) {
                 </div>
                  
                     <div ref={mobileContainerRef}  className="nav__mobile-menu">
-                        <motion.div animate={overlayAnimation} ref={overlayRef} className="nav__mobile-overlay" />
+                        <motion.div /* animate={overlayAnimation} */ ref={overlayRef} className="nav__mobile-overlay" />
                         <motion.ul
                             ref={linksRef} 
-                            animate={linksAnimation} 
+                            /* animate={linksAnimation} */ 
                             className="nav__mobile-links"
                             onClick={handleClick}
                         >

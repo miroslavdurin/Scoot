@@ -23,9 +23,9 @@ function Contact(props) {
     return (
         <motion.section className="section-contact mb-120">
             <motion.div className="contact container"
-                initial="hidden"
+                /* initial="hidden"
                 whileInView="show"
-                viewport={{once: true, amount: 0.5}}
+                viewport={{once: true, amount: 0.5}} */
             >
                 <motion.h2  variants={variantsCenter} className="heading--h2">
                     {title}

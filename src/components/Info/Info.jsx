@@ -131,10 +131,10 @@ function Info(props) {
             className={`section-info ${mb}`}>
             <div className={`info container ${isReversed && 'info--reverse'}`}>
                 <motion.div className="info--left"                 
-                    initial="hide"
+                    /* initial="hide"
                     whileInView="show"                    
                     viewport={{ once: true, amount: 0.8}}
-                    transition={{ staggerChildren:0.1 }}
+                    transition={{ staggerChildren:0.1 }} */
                 >
                     <motion.h2 
                         className="heading--h2 mb-24"
@@ -158,11 +158,11 @@ function Info(props) {
                     
                 </motion.div>
                 <motion.div className="info--right"
-                    initial="hide"
+                    /* initial="hide"
                     whileInView="show"                    
                     viewport= {{ once: true, amount: 0.5}}
                     transition= {{ staggerChildren: 0.2 }}   
-                    onAnimationComplete={animateArrow}                 
+                    onAnimationComplete={animateArrow}  */                
                 >
                     <motion.div  className="info__img-container"
                     variants={!isReversed ? imageVariantsReversed : imageVariants}>
@@ -176,8 +176,8 @@ function Info(props) {
                 isReversed && 
                 
                 <svg className="info__arrow--right" width="1005" height="151" viewBox="0 0 1005 151" fill="none" xmlns="http://www.w3.org/2000/svg">                
-                    <motion.path animate={animationLine} id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
-                    <motion.path animate={animationPoint} id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
+                    <motion.path /* animate={animationLine} */ id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
+                    <motion.path /* animate={animationPoint} */ id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
                 </svg>
             }
 
@@ -185,8 +185,8 @@ function Info(props) {
                 !isReversed &&
                 
                 <svg className={arrowChoice(arrow)} width="1005" height="151" viewBox="0 0 1005 151" fill="none" xmlns="http://www.w3.org/2000/svg">                
-                    <motion.path animate={animationLine} id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
-                    <motion.path animate={animationPoint} id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
+                    <motion.path /* animate={animationLine}  */id="Path 4" d="M1005 8H150.581V107H5.99997" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                
+                    <motion.path /* animate={animationPoint} */ id="Path 3" d="M44.4263 145.639L6 107.213L44.4263 68.7869" stroke="#FCB72B" strokeWidth="15" strokeLinejoin="bevel"/>                              
                 </svg>
             }                       
         </motion.section>

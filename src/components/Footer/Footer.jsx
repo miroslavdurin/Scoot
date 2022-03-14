@@ -26,10 +26,10 @@ function Footer() {
     return (
         <footer className='footer'>    
             <motion.div className="footer__container container"
-                initial="hide"
+                /* initial="hide"
                 whileInView="show"
                 variants={variants}
-                viewport={{once: true, amount: "all"}}
+                viewport={{once: true, amount: "all"}} */
             >    
                 <div className="footer--left-side">
                     <div className="footer__logo-box">

@@ -26,10 +26,10 @@ function Jobs(props) {
                     {jobs.map((job, i)=>{
                             return (
                                 <motion.li key={i} className="jobs__item mb-24"
-                                    initial="hide"
+                                    /* initial="hide"
                                     whileInView="show"
                                     variants={variants}
-                                    viewport={{once: true, amount: 0.6}}
+                                    viewport={{once: true, amount: 0.6}} */
                                 >                        
                                     <div className="jobs__item--left">
                                         <h4 className="heading--h4">

@@ -43,31 +43,30 @@ function FAQs() {
         <section className="section-faqs mb-160">
             <div className="faqs container">
                 <motion.h2 className="heading--h2 mb-64"
-                    initial="hide"
+                    /* initial="hide"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.5}}
-                    variants={variantsTitle}
+                    variants={variantsTitle} */
                 >
                     FAQs
                 </motion.h2>
                 <div className="faqs__container mb-64">
                     <motion.div className="faqs__title"
-                        initial="hide"
+                        /* initial="hide"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.5}}
-                        variants={variantsTitle}
+                        variants={variantsTitle} */
                     >
                         <h3 className="heading--h3">
                             {faqOne.title}
                         </h3>
                     </motion.div>
                     <div className="faqs__questions" >
-                        <motion.div 
-                            layout
-                            variants={variantsQuestion} 
+                        <motion.div                             
+                            /* variants={variantsQuestion} 
                             initial="hide"
                             whileInView="show"  
-                            viewport={{once: true, amount: 0.6}} 
+                            viewport={{once: true, amount: 0.6}}  */
                             className="faqs__content">
                             <div onClick={handleClick} className="faqs__question">
                                 <h4 className="heading--h4">
@@ -82,10 +81,10 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div 
-                            initial="hide"
+                            /* initial="hide"
                             whileInView="show"  
                             variants={variantsQuestion} 
-                            viewport={{once: true, amount: 0.6}} 
+                            viewport={{once: true, amount: 0.6}}  */
                             className="faqs__content"
                         >
                             <div onClick={handleClick} className="faqs__question">
@@ -101,10 +100,10 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div 
-                            initial="hide"
+                            /* initial="hide"
                             whileInView="show"  
                             variants={variantsQuestion} 
-                            viewport={{once: true, amount: 0.6}} 
+                            viewport={{once: true, amount: 0.6}}  */
                             className="faqs__content"
                         >
                             <div onClick={handleClick} className="faqs__question">
@@ -124,10 +123,10 @@ function FAQs() {
 
                 <div className="faqs__container mb-64">
                     <motion.div className="faqs__title"
-                        initial="hide"
+                        /* initial="hide"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.5}}
-                        variants={variantsTitle}
+                        variants={variantsTitle} */
                     >
                         <h3 className="heading--h3">
                             {faqTwo.title}
@@ -135,10 +134,10 @@ function FAQs() {
                     </motion.div>
                     <div className="faqs__questions">
                         <motion.div className="faqs__content"
-                            variants={variantsQuestion} 
+                            /* variants={variantsQuestion} 
                             initial="hide"
                             whileInView="show"  
-                            viewport={{once: true, amount: 0.6}}
+                            viewport={{once: true, amount: 0.6}} */
                         >
                             <div onClick={handleClick} className="faqs__question">
                                 <h4 className="heading--h4">
@@ -153,10 +152,10 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div className="faqs__content"
-                            variants={variantsQuestion} 
+                            /* variants={variantsQuestion} 
                             initial="hide"
                             whileInView="show"  
-                            viewport={{once: true, amount: 0.6}}
+                            viewport={{once: true, amount: 0.6}} */
                         >
                             <div onClick={handleClick} className="faqs__question">
                                 <h4 className="heading--h4">
@@ -171,10 +170,10 @@ function FAQs() {
                             </div>
                         </motion.div>
                         <motion.div className="faqs__content"
-                            variants={variantsQuestion} 
+                            /* variants={variantsQuestion} 
                             initial="hide"
                             whileInView="show"  
-                            viewport={{once: true, amount: 0.6}}
+                            viewport={{once: true, amount: 0.6}} */
                         >
                             <div onClick={handleClick} className="faqs__question">
                                 <h4 className="heading--h4">

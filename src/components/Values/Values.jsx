@@ -36,22 +36,23 @@ function Values(props) {
         <section className="section-values mb-120">
             <div className="values container">
                 <motion.h2 className="heading--h2 mb-100"
-                    initial="hide"
+                    /* initial="hide"
                     whileInView="show"
                     viewport={{ once: true, amount: 0.4}}
-                    variants={variantsTitle}
+                    variants={variantsTitle} */
                 >
                     {title}
                 </motion.h2>
                 <motion.div className="values__cards"
-                    initial="hide"
+                    /* initial="hide"
                     whileInView="show"
-                    viewport={{once: true, amount: 0.8}}                    
+                    viewport={{once: true, amount: 0.8}} */                    
                 >
-                    <motion.div viewport={{once: true, amount: 0.6}} 
+                    <motion.div 
+                        /* viewport={{once: true, amount: 0.6}} 
                         initial="hide"
                         whileInView="show" 
-                        variants={variantsCard} 
+                        variants={variantsCard} */ 
                         className="values__card"
                     >
                         <figure className="values__figure">
@@ -70,10 +71,10 @@ function Values(props) {
                         </p>
                     </motion.div>
                     <motion.div 
-                        viewport={{once: true, amount: 0.6}} 
+                        /* viewport={{once: true, amount: 0.6}} 
                         initial="hide"
                         whileInView="show" 
-                        variants={variantsCard} 
+                        variants={variantsCard} */ 
                         className="values__card"
                     >
                         <figure className="values__figure">
@@ -91,10 +92,11 @@ function Values(props) {
                             {content[1].text}
                         </p>
                     </motion.div>
-                    <motion.div viewport={{once: true, amount: 0.6}} 
+                    <motion.div 
+                        /* viewport={{once: true, amount: 0.6}} 
                         initial="hide"
                         whileInView="show" 
-                        variants={variantsCard} 
+                        variants={variantsCard} */ 
                         className="values__card"
                         >
                         <figure className="values__figure">
