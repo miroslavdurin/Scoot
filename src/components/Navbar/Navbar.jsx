@@ -25,6 +25,11 @@ function Navbar({isHome}) {
     function handleOpen() {
         setIsOpen(!isOpen);
     }    
+
+    useEffect(()=>{
+        if(!isMobileView) setIsOpen(false)
+    }, [isMobileView])
+
     useEffect(()=> {        
 
         if(isOpen) {
@@ -69,7 +74,7 @@ function Navbar({isHome}) {
 
     return (
         <motion.nav className='nav container'
-            /* initial={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ 
                 opacity: 0,
@@ -78,9 +83,9 @@ function Navbar({isHome}) {
                     duration: 0.4,
                     delay: 0.4
                 }
-            }} */
+            }}
             
-            /* transition={{ duration: 0.6, delay: isHome ? 0 : 0.8}}  */
+            transition={{ duration: 0.6, delay: isHome ? 0 : 0.8}} 
         >        
             <div className="nav--left-side">     
                 <button aria-label="mobile navigation" className="nav__mobile-button" onClick={handleOpen}>
@@ -92,7 +97,7 @@ function Navbar({isHome}) {
                     </NavLink>
                 </div>
                 
-                {isOpen && 
+                
                     <div ref={mobileContainerRef}  className="nav__mobile-menu">
                         <motion.div animate={overlayAnimation} ref={overlayRef} className="nav__mobile-overlay" />
                         <motion.ul
@@ -115,7 +120,7 @@ function Navbar({isHome}) {
                             </li>
                         </motion.ul>
                     </div>
-                }
+                
                 
                 <ul className="nav__links">
                     <li className="nav__item">

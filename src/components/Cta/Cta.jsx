@@ -48,10 +48,10 @@ function Cta() {
                     </h2>
                 </motion.div>
                 <motion.div className="cta--right"
-                    /* initial="hide"
+                    initial="hide"
                     whileInView= "show"
                     variants={variantsRight}
-                    viewport={{once: true, amount: 0.8}} */
+                    viewport={{once: true, amount: 0.8}}
                 >
                     <a href='#' className='cta__link'>
                         <img className='cta__icon' src={appStore} alt="App Store icon" />

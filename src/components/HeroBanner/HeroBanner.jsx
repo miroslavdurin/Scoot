@@ -61,20 +61,20 @@ function HeroBanner(props) {
 
     return (
         <motion.div
-           /*  variants={variantsContainer}
+            variants={variantsContainer}
             initial="hidden"
             animate="show"
             exit="exit"
-            onAnimationStart={onStart} */
+            onAnimationStart={onStart}
             className="hero-banner  mb-120"
         >                
             <div className="hero-banner__content container">                
                     <motion.h1 className="heading--h1"
-                        /* variants={variantsElement} */                    
+                        variants={variantsElement}                    
                     >
                         {title}
                     </motion.h1>
-                    <motion.img /* variants={variantsElement} */ className="hero-banner__circles" src={patterns.whiteCircles} alt="white circles" />                
+                    <motion.img variants={variantsElement} className="hero-banner__circles" src={patterns.whiteCircles} alt="white circles" />                
             </div>
         </motion.div>
     )

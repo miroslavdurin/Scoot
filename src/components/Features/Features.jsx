@@ -47,24 +47,24 @@ function Features() {
     }, 500);
    
     return (        
-        /* isLoaded  && */
+        isLoaded  &&
             <>
                 <motion.section  className='section-features mb-200'>
                     <motion.div                 
                         className="features__line"    
-                        /* initial= {size.width >= 768 ? {scaleX: 0} : {scaleY: 0}}
-                        animate= {lineAnimation}  */                                                  
+                        initial= {size.width >= 768 ? {scaleX: 0} : {scaleY: 0}}
+                        animate= {lineAnimation}                                                   
                     />
                     <div className="features container">
                         {features.map((feature,i)=>{
                             return(
                                 <motion.div 
-                                    /* initial="hide"
+                                    initial="hide"
                                     whileInView="show" 
                                     viewport={{ once: true,  amount: 0.8}} 
                                     variants={variants} 
                                     key={altTags[i]} 
-                                    onAnimationComplete={i === 2 && handleComplete} */
+                                    onAnimationComplete={i === 2 && handleComplete}
                                     className="features__card"
                                 >                            
                                     <img className="features__icon mb-40" src={feature.icon} alt={altTags[i]} />     

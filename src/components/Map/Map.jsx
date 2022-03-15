@@ -19,9 +19,9 @@ function Map(props) {
     return (
         <motion.section         
             className="section-map mb-120"
-            /* variants={variants}
+            variants={variants}
             initial="hide"
-            animate="show" */
+            animate="show"
         >
             <div className="map container">                
                 <picture>

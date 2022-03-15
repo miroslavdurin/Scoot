@@ -132,17 +132,17 @@ function Hero() {
     
     return (
         <motion.section className='section-hero mb-160'
-            /* initial="hide"
+            initial="hide"
             animate="show"
             exit="exit"          
-            variants={sectionVariants} */
+            variants={sectionVariants}
         >                    
             <div className="hero">                
                 <motion.div 
-                    /* initial="hide"
+                    initial="hide"
                     animate="show"
                     exit="exit"
-                    variants={contentVariants} */
+                    variants={contentVariants}
                     className="hero__content container"
                 >                                               
                     <div className="hero__text-box mb-40">
@@ -159,12 +159,12 @@ function Hero() {
                 </motion.div>
                 <motion.svg 
                     className="hero__line"
-                    /* initial="hide"
+                    initial="hide"
                     animate="show"
                     exit="hide"
                     style={{originX: 0}}                    
                     transition={{ duration: 0.6}}
-                    variants={lineVariants} */
+                    variants={lineVariants}
                     xmlns="http://www.w3.org/2000/svg" 
                     width="203"
                     height="15"
@@ -179,26 +179,26 @@ function Hero() {
                     height="151">
                         <g fill="none" fillRule="evenodd" stroke="#FCB72B" strokeLinejoin="bevel" strokeWidth="15">
                             <motion.path 
-                                /* initial="hide"
+                                initial="hide"
                                 animate="show"
                                 exit="exit"
-                                variants={arrowPointVariants} */
+                                variants={arrowPointVariants}
                                 d="M407.952 145.444l38.426-38.426-38.426-38.426"/>
                             <motion.path 
-                                /* initial="hide"
+                                initial="hide"
                                 animate="show"
                                 exit="exit"                          
-                                variants={arrowLineVariants} */
+                                variants={arrowLineVariants}
                             d="M0 8h270.115v99.369h176.263"/>
                         </g>
                 </svg>  
                 <img className="hero__circles" src={patterns.whiteCircles} alt="white circles pattern" />
-{/* 
-                {<motion.div className="intro-overlay" 
+
+                <motion.div className="intro-overlay" 
                         initial="hide"
                         animate="show"
                         variants={overlayVariants}  
-                />} */}
+                />
             </div>
         </motion.section>
     )

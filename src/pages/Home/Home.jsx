@@ -37,10 +37,10 @@ function Home() {
     
     return (
         <motion.div
-            /* initial="hide"
+            initial="hide"
             animate="show"
             exit="exit"
-            variants={variants} */
+            variants={variants}
         >
             <header>
                 <Navbar isHome={true} />   
