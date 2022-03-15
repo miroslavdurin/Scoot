@@ -46,7 +46,7 @@
 svg.hero__line {
     position: absolute;
     z-index: 2;
-    top: 35.5rem;   
+    top: 34.7rem;   
     stroke: 20px;
     left: 0;
     width: var(--line-width);
@@ -57,7 +57,7 @@ svg.hero__line {
 .hero__right-arrow {
     position: absolute;
     z-index: 2;
-    top: 35rem;
+    top: 34.7rem;
     left: var(--hero-arrow-x-offset);
 }
 
@@ -65,7 +65,7 @@ svg.hero__line {
     position: absolute;
     right: 0;
     bottom: 16.5rem;
-    transform: translateX(5rem);
+    transform: translateX(4.8rem);
 }
 
 

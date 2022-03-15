@@ -120,7 +120,7 @@ function Info(props) {
     }
  
     useEffect(()=> {
-        /* Setting initianl length of an arrow */
+        /* Setting initial length of an arrow */
         animationLine.set({ pathLength: 0 });
         animationPoint.set({ pathLength:0, rotateX: 180 });              
     }, []);   

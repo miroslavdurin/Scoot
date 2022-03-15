@@ -69,6 +69,7 @@ function Features() {
                                 >                            
                                     <img className="features__icon mb-40" src={feature.icon} alt={altTags[i]} />     
                                     <div className="features__content">
+                                        {/* h2 tag was used here to avoid accessibility error */}
                                         <h2 className="heading--h4 mb-24">{feature.title}</h2>
                                         <p className="paragraph">{feature.text}</p>
                                     </div>                                                                                

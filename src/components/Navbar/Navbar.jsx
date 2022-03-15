@@ -4,12 +4,15 @@ import './Navbar.css';
 import { logo } from '../../constants';
 import { NavLink } from 'react-router-dom';
 import { motion, useAnimation } from 'framer-motion';
+import { useMediaQuery } from '../../helpers/hooks';
 
 function Navbar({isHome}) {
     const [isOpen, setIsOpen] = useState(false);
     const overlayRef = useRef(null);
     const linksRef = useRef(null);
     const mobileContainerRef = useRef(null);
+
+    const isMobileView = useMediaQuery('(max-width: 720px)');
 
     const overlayAnimation = useAnimation();
     const linksAnimation = useAnimation();
@@ -59,9 +62,9 @@ function Navbar({isHome}) {
                 }
             }).finally(()=>
                 mobileContainerRef.current.classList.add('hidden')
-            )                 
-
+            )            
         }
+
     },[isOpen])
 
     return (
@@ -77,7 +80,7 @@ function Navbar({isHome}) {
                 }
             }} */
             
-            transition={{ duration: 0.6, delay: isHome ? 0 : 0.8}} 
+            /* transition={{ duration: 0.6, delay: isHome ? 0 : 0.8}}  */
         >        
             <div className="nav--left-side">     
                 <button aria-label="mobile navigation" className="nav__mobile-button" onClick={handleOpen}>
@@ -88,12 +91,13 @@ function Navbar({isHome}) {
                         <img src={logo} alt="navigation logo" className="nav__logo" onClick={()=>window.scrollTo({top:0})} />  
                     </NavLink>
                 </div>
-                 
+                
+                {isOpen && 
                     <div ref={mobileContainerRef}  className="nav__mobile-menu">
-                        <motion.div /* animate={overlayAnimation} */ ref={overlayRef} className="nav__mobile-overlay" />
+                        <motion.div animate={overlayAnimation} ref={overlayRef} className="nav__mobile-overlay" />
                         <motion.ul
                             ref={linksRef} 
-                            /* animate={linksAnimation} */ 
+                            animate={linksAnimation}  
                             className="nav__mobile-links"
                             onClick={handleClick}
                         >
@@ -111,7 +115,7 @@ function Navbar({isHome}) {
                             </li>
                         </motion.ul>
                     </div>
-                
+                }
                 
                 <ul className="nav__links">
                     <li className="nav__item">
